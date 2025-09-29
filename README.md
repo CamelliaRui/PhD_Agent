@@ -19,6 +19,7 @@ An intelligent AI-powered research assistant designed to streamline PhD research
 - **GitHub Integration**: Track research code progress and commits
 - **Notion Integration**: Organize research notes, papers, and ideas in structured databases
 - **Weekly Reports**: Automated progress reporting and task tracking
+- **DeepWiki Codebase Indexing**: Index and search paper implementation codebases for deep understanding
 
 ### 🔗 MCP (Model Context Protocol) Support
 - Advanced integration with Claude AI through MCP
@@ -92,6 +93,31 @@ agenda = generate_meeting_agenda(username="your-github-username", days=7)
 print(agenda)
 ```
 
+### Index and Query Paper Codebases with DeepWiki
+```python
+from deepwiki_mcp_integration import DeepWikiMCPIntegration
+
+deepwiki = DeepWikiMCPIntegration()
+
+# Index a paper's implementation
+result = await deepwiki.index_paper_codebase(
+    github_url="https://github.com/huggingface/transformers",
+    paper_title="Transformers: State-of-the-Art NLP"
+)
+
+# Ask questions about the codebase
+answer = await deepwiki.ask_about_codebase(
+    repository="huggingface/transformers",
+    question="How do I fine-tune BERT for classification?"
+)
+
+# Search for specific implementations
+results = await deepwiki.search_codebase(
+    repository="huggingface/transformers",
+    query="attention mechanism"
+)
+```
+
 ## 🏗️ Architecture
 
 The PhD Agent consists of several modular components:
@@ -102,6 +128,7 @@ The PhD Agent consists of several modular components:
 - **Slack Integration** (`slack_mcp_integration.py`, `slack_paper_monitor.py`): Team collaboration features
 - **Zotero Integration** (`zotero_mcp_integration.py`): Reference management
 - **MCP Integrations** (`mcp_integrations.py`): GitHub and Notion connectivity
+- **DeepWiki Integration** (`deepwiki_mcp_integration.py`): Index and search paper implementation codebases
 - **Meeting Tools** (`generate_meeting_agenda.py`): Productivity automation
 
 ## 🔧 Configuration
@@ -126,6 +153,10 @@ GITHUB_TOKEN=your_token
 # Zotero (optional)
 ZOTERO_API_KEY=your_api_key
 ZOTERO_USER_ID=your_user_id
+
+# DeepWiki (optional)
+DEEPWIKI_API_KEY=your_api_key  # For private repos
+DEEPWIKI_MAX_CONCURRENCY=5
 ```
 
 See `.env.example` for a complete template.
@@ -148,6 +179,14 @@ This will test:
 - GitHub integration
 - Notion database operations
 - Weekly report generation
+
+Test DeepWiki integration:
+
+```bash
+python test_deepwiki.py
+# Or for interactive testing:
+python test_deepwiki.py --interactive
+```
 
 ## 🤝 Contributing
 

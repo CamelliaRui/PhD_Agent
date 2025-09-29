@@ -25,6 +25,7 @@ from mcp_integrations import GitHubMCPIntegration, NotionMCPIntegration
 from slack_mcp_integration import SlackMCPIntegration
 from zotero_mcp_integration import ZoteroMCPIntegration
 from slack_paper_monitor import SlackPaperMonitor
+from deepwiki_mcp_integration import DeepWikiMCPIntegration
 
 # Load environment variables
 load_dotenv()
@@ -46,6 +47,7 @@ class PhdAgent:
         self.slack_integration = SlackMCPIntegration()
         self.zotero_integration = ZoteroMCPIntegration()
         self.paper_monitor = SlackPaperMonitor()
+        self.deepwiki_integration = DeepWikiMCPIntegration()
         self.setup_claude_client()
     
     def setup_claude_client(self):
@@ -368,6 +370,42 @@ class PhdAgent:
             logger.error(f"Error searching Slack: {e}")
             return []
 
+    async def index_paper_codebase(self, github_url: str, paper_title: Optional[str] = None) -> Dict[str, Any]:
+        """Index a paper's codebase using DeepWiki"""
+        try:
+            result = await self.deepwiki_integration.index_paper_codebase(
+                github_url=github_url,
+                paper_title=paper_title
+            )
+            return result
+        except Exception as e:
+            logger.error(f"Error indexing paper codebase: {e}")
+            return {"error": str(e)}
+
+    async def ask_about_codebase(self, repository: str, question: str) -> Dict[str, Any]:
+        """Ask questions about an indexed codebase"""
+        try:
+            result = await self.deepwiki_integration.ask_about_codebase(
+                repository=repository,
+                question=question
+            )
+            return result
+        except Exception as e:
+            logger.error(f"Error asking about codebase: {e}")
+            return {"error": str(e)}
+
+    async def search_codebase(self, repository: str, query: str) -> List[Dict[str, Any]]:
+        """Search within an indexed codebase"""
+        try:
+            results = await self.deepwiki_integration.search_codebase(
+                repository=repository,
+                query=query
+            )
+            return results
+        except Exception as e:
+            logger.error(f"Error searching codebase: {e}")
+            return [{"error": str(e)}]
+
     async def interactive_session(self):
         """Start an interactive session with the PhD Agent"""
         print("🎓 PhD Agent initialized! How can I help you today?")
@@ -380,8 +418,12 @@ class PhdAgent:
         print("6. 'slack channel [channel_name]' - Get Slack channel summary")
         print("7. 'slack search [query]' - Search Slack messages")
         print("8. 'slack papers [hours]' - Check #paper channel (default: 168 hours/7 days)")
-        print("9. 'chat [message]' - General discussion")
-        print("10. 'quit' - Exit")
+        print("9. 'deepwiki index [github_url]' - Index a paper's GitHub codebase")
+        print("10. 'deepwiki ask [repo] [question]' - Ask about an indexed codebase")
+        print("11. 'deepwiki search [repo] [query]' - Search within indexed codebase")
+        print("12. 'deepwiki list' - List all indexed repositories")
+        print("13. 'chat [message]' - General discussion")
+        print("14. 'quit' - Exit")
         
         while True:
             try:
@@ -497,6 +539,94 @@ class PhdAgent:
                             hours = 168
                     print(f"📚 Checking #paper channel for papers from the last {hours} hours...")
                     await self.paper_monitor.run_once(hours_back=hours)
+
+                elif user_input.startswith('deepwiki index '):
+                    github_url = user_input[15:].strip()
+                    if github_url:
+                        print(f"📚 Indexing codebase from: {github_url}")
+                        # Extract paper title if provided (format: URL | title)
+                        if '|' in github_url:
+                            github_url, paper_title = github_url.split('|', 1)
+                            github_url = github_url.strip()
+                            paper_title = paper_title.strip()
+                        else:
+                            paper_title = None
+
+                        result = await self.index_paper_codebase(github_url, paper_title)
+
+                        if result.get('status') == 'success':
+                            print(f"✅ Successfully indexed: {result['repository']}")
+                            print(f"   DeepWiki URL: {result['deepwiki_url']}")
+                            if result['paper_metadata']['title']:
+                                print(f"   Paper: {result['paper_metadata']['title']}")
+                            doc_info = result['documentation']
+                            print(f"   Pages indexed: {doc_info['pages_indexed']}")
+                            print(f"   Has README: {doc_info['has_readme']}")
+                            print(f"   Has docs: {doc_info['has_docs']}")
+                        else:
+                            print(f"❌ Error: {result.get('error', 'Unknown error')}")
+                    else:
+                        print("❓ Please provide a GitHub URL. Format: deepwiki index <github_url> [| <paper_title>]")
+
+                elif user_input.startswith('deepwiki ask '):
+                    parts = user_input[13:].strip().split(' ', 1)
+                    if len(parts) >= 2:
+                        repo = parts[0]
+                        question = parts[1]
+                        print(f"🤔 Asking about {repo}: {question}")
+
+                        result = await self.ask_about_codebase(repo, question)
+
+                        if result.get('status') == 'success':
+                            print(f"\n💡 Answer: {result['answer']}")
+                            if result.get('sources'):
+                                print("\n📖 Sources:")
+                                for source in result['sources'][:3]:
+                                    print(f"   - {source}")
+                        else:
+                            print(f"❌ Error: {result.get('error', 'Unknown error')}")
+                    else:
+                        print("❓ Usage: deepwiki ask <owner/repo> <question>")
+
+                elif user_input.startswith('deepwiki search '):
+                    parts = user_input[16:].strip().split(' ', 1)
+                    if len(parts) >= 2:
+                        repo = parts[0]
+                        query = parts[1]
+                        print(f"🔍 Searching in {repo} for: {query}")
+
+                        results = await self.search_codebase(repo, query)
+
+                        if results and not any('error' in r for r in results):
+                            print(f"\n📄 Found {len(results)} files with matches:")
+                            for result in results[:5]:
+                                print(f"\n   File: {result['path']}")
+                                for match in result['matches'][:3]:
+                                    print(f"      Line {match['line']}: {match['content'][:100]}...")
+                        elif results and 'error' in results[0]:
+                            print(f"❌ Error: {results[0]['error']}")
+                        else:
+                            print("No matches found.")
+                    else:
+                        print("❓ Usage: deepwiki search <owner/repo> <query>")
+
+                elif user_input == 'deepwiki list':
+                    repos = self.deepwiki_integration.get_indexed_repositories()
+                    if repos:
+                        print(f"\n📚 Indexed repositories ({len(repos)}):")
+                        for repo_info in repos:
+                            print(f"\n   Repository: {repo_info['repository']}")
+                            if repo_info['paper_title']:
+                                print(f"   Paper: {repo_info['paper_title']}")
+                            if repo_info['authors']:
+                                print(f"   Authors: {', '.join(repo_info['authors'])}")
+                            if repo_info['year']:
+                                print(f"   Year: {repo_info['year']}")
+                            print(f"   Indexed at: {repo_info['indexed_at']}")
+                            print(f"   GitHub: {repo_info['github_url']}")
+                            print(f"   DeepWiki: {repo_info['deepwiki_url']}")
+                    else:
+                        print("No repositories indexed yet. Use 'deepwiki index <github_url>' to start.")
 
                 elif user_input.startswith('chat '):
                     message = user_input[5:]
