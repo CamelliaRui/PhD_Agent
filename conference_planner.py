@@ -577,24 +577,30 @@ class ConferencePlanner:
                     if choice == 'k':
                         print(f"\n✅ Keeping existing {len(existing_interests)} interests.\n")
                         self.research_interests = existing_interests
-                        return existing_interests
+                        interests = existing_interests
+                        skip_interest_input = True  # Skip to exclusions/thesis
                     elif choice == 'r':
                         print("\n🔄 Starting fresh...\n")
                         interests = []
+                        skip_interest_input = False
                     else:  # default to 'add'
                         print(f"\n➕ Adding to existing interests...\n")
                         # Filter out NA entries
                         interests = [i for i in existing_interests if i.strip() and i.strip().upper() != 'NA']
+                        skip_interest_input = False
                 else:
                     interests = []
+                    skip_interest_input = False
             except Exception as e:
                 logger.debug(f"Could not load existing interests: {e}")
                 interests = []
+                skip_interest_input = False
         else:
             interests = []
+            skip_interest_input = False
 
-        # Show instructions
-        if not interests:
+        # Show instructions (only if not skipping)
+        if not skip_interest_input and not interests:
             print("\nPlease describe your research interests for conference planning.")
             print("This will help match talks and posters relevant to your work.")
             print("\n💡 Examples:")
@@ -604,28 +610,33 @@ class ConferencePlanner:
             print("  - Machine learning for genomic prediction")
             print("  - Statistical fine-mapping for genetic data")
             print("  - eQTLs, QTLs, and regulatory elements")
-        else:
+        elif not skip_interest_input:
             print("\n💡 Add more interests to complement the ones above.")
 
-        print("\nEnter your interests one per line. Type 'done' when finished.")
-        print("-"*60 + "\n")
+        # Only prompt for new interests if not skipping
+        if not skip_interest_input:
+            print("\nEnter your interests one per line. Type 'done' when finished.")
+            print("-"*60 + "\n")
 
-        start_num = len(interests) + 1
-        while True:
-            interest = input(f"Interest #{len(interests) + 1}: ").strip()
+            start_num = len(interests) + 1
+            while True:
+                interest = input(f"Interest #{len(interests) + 1}: ").strip()
 
-            if interest.lower() == 'done':
-                if not interests:
-                    print("\n⚠️  Please enter at least one research interest.")
-                    continue
-                break
+                if interest.lower() == 'done':
+                    if not interests:
+                        print("\n⚠️  Please enter at least one research interest.")
+                        continue
+                    break
 
-            if interest and interest.upper() != 'NA':
-                interests.append(interest)
-                print(f"  ✓ Added: {interest}")
+                if interest and interest.upper() != 'NA':
+                    interests.append(interest)
+                    print(f"  ✓ Added: {interest}")
 
-        self.research_interests = interests
-        print(f"\n✅ Total: {len(interests)} research interests!\n")
+            self.research_interests = interests
+            print(f"\n✅ Total: {len(interests)} research interests!\n")
+        else:
+            # Already set above when 'k' was chosen
+            print(f"✅ Using {len(interests)} existing interests\n")
 
         # Now ask for exclusion topics
         print("\n" + "="*60)
