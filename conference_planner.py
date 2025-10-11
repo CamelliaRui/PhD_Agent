@@ -247,19 +247,47 @@ class ConferencePlanner:
         lines = text.split('\n')
         for i, line in enumerate(lines):
             if 'Subsession Time:' in line:
-                # Look backwards for the title (usually 1-3 lines before)
+                # Look backwards for the title (usually 1-2 lines before)
+                # Collect consecutive title lines closest to "Subsession Time:"
                 title_lines = []
-                for j in range(max(0, i-5), i):
+                for j in range(i-1, max(0, i-4)-1, -1):  # Search backwards from i-1, max 3 lines
                     prev_line = lines[j].strip()
-                    if (prev_line and 
-                        not prev_line.startswith(('ASHG', 'indicates', 'Session', 'Location:', 'Time:')) and
-                        len(prev_line) > 20 and
-                        not ('(' in prev_line and ')' in prev_line and 
-                             any(inst in prev_line.lower() for inst in ['university', 'institute', 'hospital', 'center']))):
-                        title_lines.append(prev_line)
-                
-                # Take the last (closest) title line
-                title = title_lines[-1] if title_lines else None
+
+                    # Stop at blank lines (separator between abstracts)
+                    if not prev_line:
+                        break
+
+                    # Check if line looks like a title (not abstract text)
+                    is_title_line = False
+
+                    # First line of title (longer, more restrictive)
+                    if not title_lines and len(prev_line) > 20:
+                        if (not prev_line.startswith(('ASHG', 'indicates', 'Session', 'Location:', 'Time:', 'Authors:', 'Abstract:')) and
+                            not (prev_line.endswith('.') or
+                                 any(word in prev_line.lower() for word in [' we ', ' our ', ' this study', ' these ', ' background:', ' methods:', ' results:', ' conclusion:'])) and
+                            not ('(' in prev_line and ')' in prev_line and
+                                 any(inst in prev_line.lower() for inst in ['university', 'institute', 'hospital', 'center']))):
+                            is_title_line = True
+                    # Continuation line (shorter, more permissive - just needs to not look like abstract text)
+                    elif title_lines and len(prev_line) > 5:
+                        if (not prev_line.startswith(('ASHG', 'indicates', 'Session', 'Location:', 'Time:', 'Authors:', 'Abstract:')) and
+                            not prev_line.endswith('.') and  # Titles rarely end with periods on continuation lines
+                            ' ' in prev_line and  # Must have at least one space (multiple words)
+                            not any(word in prev_line.lower() for word in [' we ', ' our ', ' this study', ' these ', ' background:', ' methods:', ' results:', ' conclusion:'])):
+                            is_title_line = True
+
+                    if is_title_line:
+                        title_lines.insert(0, prev_line)  # Insert at beginning to maintain order
+                        # Limit to 2 lines max for multi-line titles
+                        if len(title_lines) >= 2:
+                            break
+                    else:
+                        # Stop at first non-title line
+                        if title_lines:
+                            break
+
+                # Join consecutive title lines (handles multi-line titles)
+                title = ' '.join(title_lines) if title_lines else None
                 
                 # Extract the section from this point forward until next subsection or end
                 section_lines = [line]  # Include the Subsession Time line

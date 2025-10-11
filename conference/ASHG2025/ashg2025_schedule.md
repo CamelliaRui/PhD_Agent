@@ -1,10 +1,10 @@
 # ASHG2025 - Personalized Schedule
 
-*Generated on: 2025-10-11 16:16:54*
+*Generated on: 2025-10-11 16:37:51*
 
 **Total Relevant Sessions: 50**
 
-⚠️ **13 scheduling conflicts detected** (marked with 🔴)
+⚠️ **12 scheduling conflicts detected** (marked with 🔴)
 
 ---
 
@@ -22,9 +22,9 @@
 
 ## 📅 Friday, October 17
 
-### generative AI is not suitable for variant classification
+### Artificial intelligence cannot replace human intelligence: publicly available generative AI is not suitable for variant classification
 
-**Type:** 🎤 Talk | **Relevance Score:** 44.23%
+**Type:** 🎤 Talk | **Relevance Score:** 44.85%
 
 **⏰ Time:** 11:00am – 11:15am
 
@@ -36,9 +36,9 @@ A clinical scientist receives a genetic testing result for a patient. They are n
 
 ---
 
-### human retina enabled by single-cell long-read RNA sequencing
+### Allele-specific transcriptome variation identification at single-cell resolution in human retina enabled by single-cell long-read RNA sequencing
 
-**Type:** 🎤 Talk | **Relevance Score:** 47.65%
+**Type:** 🎤 Talk | **Relevance Score:** 48.32%
 
 **⏰ Time:** 11:15am – 11:30am
 
@@ -47,20 +47,6 @@ A clinical scientist receives a genetic testing result for a patient. They are n
 **📝 Abstract:**
 
 Background: Regulation of gene expression and transcript structure contributes to transcriptomic diversity and plays a critical role in human disease. Systematically characterizing how genetic variation influences gene regulation in the corresponding cell context is fundamental to understanding comp...
-
----
-
-### Population scale single-cell multi-omic analysis of clonal haematopoiesis
-
-**Type:** 🎤 Talk | **Relevance Score:** 46.56%
-
-**⏰ Time:** 11:30am – 11:45am
-
-**👥 Authors:** Zhen Qiao, Michael
-
-**📝 Abstract:**
-
-Clonal haematopoiesis (CH) is an age-related process characterised by the accumulation of somatic mutations in haematopoietic stem cells that drive clonal expansion. CH has been implicated in a wide variety of adverse clinical outcomes, including increased risks of haematological malignancies and ca...
 
 ---
 
@@ -78,9 +64,9 @@ Large-scale sequencing projects have revealed millions of rare genetic variants 
 
 ---
 
-### trajectory reveals variable inter-individual epigenetic differences
+### Comprehensive multimodal single-nucleus profiling of an iPSC reprogramming trajectory reveals variable inter-individual epigenetic differences
 
-**Type:** 🎤 Talk | **Relevance Score:** 44.76%
+**Type:** 🎤 Talk | **Relevance Score:** 45.67%
 
 **⏰ Time:** 1:45pm – 1:50pm
 
@@ -92,9 +78,9 @@ Reprogramming of somatic cells to induced pluripotent stem cells (iPSCs) is a pr
 
 ---
 
-### Architecture of Chronic Kidney Disease
+### Single-Cell Multiomic Mapping Uncovers Cell-Type-Specific Regulatory Architecture of Chronic Kidney Disease
 
-**Type:** 🎤 Talk | **Relevance Score:** 46.77%
+**Type:** 🎤 Talk | **Relevance Score:** 48.35%
 
 **⏰ Time:** 1:50pm – 1:55pm
 
@@ -106,9 +92,9 @@ Chronic kidney disease (CKD) affects over 800 million people worldwide, posing s
 
 ---
 
-### 🔴 autoimmune disease risk
+### 🔴 Genetic variants regulating immune cell-cell interactions are key drivers for autoimmune disease risk
 
-**Type:** 🎤 Talk | **Relevance Score:** 50.44%
+**Type:** 🎤 Talk | **Relevance Score:** 49.82%
 
 **⏰ Time:** 2:00pm – 2:05pm
 
@@ -122,9 +108,9 @@ GWAS has identified hundreds of variants associated with autoimmune diseases, mo
 
 ---
 
-### 🔴 Expression in B Cells
+### 🔴 Defining the Molecular Effect of the Autoimmune-Risk Allele on Surface CD40 Expression in B Cells
 
-**Type:** 🎤 Talk | **Relevance Score:** 45.88%
+**Type:** 🎤 Talk | **Relevance Score:** 46.57%
 
 **⏰ Time:** 2:00pm – 2:05pm
 
@@ -138,9 +124,9 @@ GWAS has revealed the genetics of autoimmunity. While polygenic analyses emphasi
 
 ---
 
-### 🔴 function and disease risk
+### 🔴 Genetic regulation of cell-type–specific chromatin accessibility shapes immune function and disease risk
 
-**Type:** 🎤 Talk | **Relevance Score:** 49.28%
+**Type:** 🎤 Talk | **Relevance Score:** 47.77%
 
 **⏰ Time:** 2:05pm – 2:10pm
 
@@ -154,9 +140,9 @@ Understanding how genetic variation regulates gene expression at the single-cell
 
 ---
 
-### 🔴 roles of alveolar cells in lung cancer etiology
+### 🔴 Single-cell eQTL dataset of lung tissues from Asian never-smokers highlights the roles of alveolar cells in lung cancer etiology
 
-**Type:** 🎤 Talk | **Relevance Score:** 45.54%
+**Type:** 🎤 Talk | **Relevance Score:** 46.66%
 
 **⏰ Time:** 2:05pm – 2:10pm
 
@@ -170,9 +156,9 @@ Background: Single-cell expression quantitative trait loci (sc-eQTL) studies are
 
 ---
 
-### PRISM-Multiplexed Cancer Cell Lines Sequenced with SBX
+### Single-Cell Multi-Omic Drug Response Profiling of 1 Million Cells Across 500 PRISM-Multiplexed Cancer Cell Lines Sequenced with SBX
 
-**Type:** 🎤 Talk | **Relevance Score:** 44.54%
+**Type:** 🎤 Talk | **Relevance Score:** 44.24%
 
 **⏰ Time:** 2:15pm – 2:20pm
 
@@ -184,9 +170,9 @@ Inter-individual variability in drug response is a key challenge in precision on
 
 ---
 
-### across WES and WGS in rare diseases
+### 3ASC 2.0: A unified deep learning model for comprehensive variant prioritization across WES and WGS in rare diseases
 
-**Type:** 🎤 Talk | **Relevance Score:** 45.72%
+**Type:** 📋 Poster | **Relevance Score:** 46.29%
 
 **⏰ Time:** 2:20pm – 2:25pm
 
@@ -200,9 +186,23 @@ As deep learning continues to advance clinical genetics, particularly for rare d
 
 ## 📅 Saturday, October 18
 
-### personal epigenome resource
+### Adipose single nucleus transcriptomic and epigenomic sequencing discovers 192 colocalized regulatory variants for eight cardiometabolic disease traits
 
-**Type:** 🎤 Talk | **Relevance Score:** 44.61%
+**Type:** 🎤 Talk | **Relevance Score:** 44.64%
+
+**⏰ Time:** 10:45am – 11:00am
+
+**👥 Authors:** Seung Hyuk T. Lee, Asha Kar, Kyla Z. Gelev *et al.* (4 total)
+
+**📝 Abstract:**
+
+Previous colocalization analyses of cardiometabolic diseases (CMDs) using bulk subcutaneous adipose tissue (SAT) are confounded by cellular heterogeneity, limiting resolution of gene-trait associations and masking causal mechanisms. To overcome this, we performed cell-type level cis-eQTL mapping in ...
+
+---
+
+### Optimally matching healthy and disease-specific adult brains onto the EN-TEx personal epigenome resource
+
+**Type:** 🎤 Talk | **Relevance Score:** 44.29%
 
 **⏰ Time:** 8:30am – 8:45am
 
@@ -230,9 +230,9 @@ Introduction: Non-coding genetic variants identified by GWAS influence brain dis
 
 ## 📅 Thursday, October 16
 
-### mechanisms of microglia dysfunction
+### Localizing MS GWAS SNPs to pathogenic cell types reveals convergent mechanisms of microglia dysfunction
 
-**Type:** 🎤 Talk | **Relevance Score:** 46.38%
+**Type:** 🎤 Talk | **Relevance Score:** 45.75%
 
 **⏰ Time:** 10:45am – 11:00am
 
@@ -244,9 +244,23 @@ The pathogenesis of complex traits like multiple sclerosis (MS) involves disrupt
 
 ---
 
-### viral, non-nanoparticle delivery platform for CRISPR/dCas9-based gene
+### Deciphering causal variant effects in Digestive Disease via Organoid-based allele specific open chromatin and CRISPRi
 
-**Type:** 🎤 Talk | **Relevance Score:** 45.07%
+**Type:** 🎤 Talk | **Relevance Score:** 44.32%
+
+**⏰ Time:** 11:15am – 11:30am
+
+**👥 Authors:** Luke T. Deary
+
+**📝 Abstract:**
+
+Genetics play important roles for many digestive traits and diseases, such as colorectal cancer (CRC) and inflammatory bowel disease (IBD). Genome-wide association studies (GWAS) have identified thousands of associated variants for these traits, However, pinpointing true causal variants and their bi...
+
+---
+
+### Therapeutic epigenome editing for Prader-Willi Syndrome using a novel non- viral, non-nanoparticle delivery platform for CRISPR/dCas9-based gene
+
+**Type:** 🎤 Talk | **Relevance Score:** 44.55%
 
 **⏰ Time:** 11:30am – 11:45am
 
@@ -272,9 +286,25 @@ Epigenome editing using CRISPR/dCas9 offers a promising therapeutic avenue for n
 
 ---
 
-### 🔴 Genomic Rearrangements in Human Hematopoietic Stem Cells
+### 🔴 MicroRNA Perturb-Seq Reveals Genome-wide Functional Targets and Deleterious 3’UTR Variants
 
-**Type:** 🎤 Talk | **Relevance Score:** 47.06%
+**Type:** 🎤 Talk | **Relevance Score:** 47.60%
+
+**⏰ Time:** 1:45pm – 2:00pm
+
+**👥 Authors:** Eyal Ben-David, Doyeon Kim, Wayne Xianding Deng *et al.* (6 total)
+
+**📝 Abstract:**
+
+MicroRNAs (miRNAs) are essential regulators of post-transcriptional gene expression, yet our understanding of their targets and mechanisms remains incomplete. To obtain a comprehensive catalog of miRNA-transcript target pairs, we performed miRNA perturb-seq with a library of ~650 conserved human miR...
+
+⚠️ **CONFLICT:** 4 interesting talks at this time
+
+---
+
+### 🔴 High-Coverage Whole-Genome Sequencing Uncovers Complex CRISPR-Induced Genomic Rearrangements in Human Hematopoietic Stem Cells
+
+**Type:** 🎤 Talk | **Relevance Score:** 46.38%
 
 **⏰ Time:** 1:45pm – 2:00pm
 
@@ -288,17 +318,17 @@ CRISPR-Cas genome editing introduces a range of genomic alterations that must be
 
 ---
 
-### 🔴 Deleterious 3’UTR Variants
+### 🔴 Identification of genetic modifiers of somatic instability across multiple repeat expansion disease loci using in vivo CRISPR–Cas9 genome editing
 
-**Type:** 🎤 Talk | **Relevance Score:** 46.13%
+**Type:** 🎤 Talk | **Relevance Score:** 44.76%
 
 **⏰ Time:** 1:45pm – 2:00pm
 
-**👥 Authors:** Eyal Ben-David, Doyeon Kim, Wayne Xianding Deng *et al.* (6 total)
+**👥 Authors:** Ricardo Mouro Pinto
 
 **📝 Abstract:**
 
-MicroRNAs (miRNAs) are essential regulators of post-transcriptional gene expression, yet our understanding of their targets and mechanisms remains incomplete. To obtain a comprehensive catalog of miRNA-transcript target pairs, we performed miRNA perturb-seq with a library of ~650 conserved human miR...
+Somatic expansion of disease-causing repeats is a critical driver of disease pathogenesis in Huntington’s disease (HD) and other repeat expansion disorders. Targeting the DNA repair pathways that mediate this process presents a promising therapeutic avenue. To accelerate the discovery of genetic mod...
 
 ⚠️ **CONFLICT:** 4 interesting talks at this time
 
@@ -320,22 +350,6 @@ Gene regulatory mutations are a powerful engine of phenotypic diversity across c
 
 ---
 
-### 🔴 expansion disease loci using in vivo CRISPR–Cas9 genome editing
-
-**Type:** 🎤 Talk | **Relevance Score:** 44.49%
-
-**⏰ Time:** 1:45pm – 2:00pm
-
-**👥 Authors:** Ricardo Mouro Pinto
-
-**📝 Abstract:**
-
-Somatic expansion of disease-causing repeats is a critical driver of disease pathogenesis in Huntington’s disease (HD) and other repeat expansion disorders. Targeting the DNA repair pathways that mediate this process presents a promising therapeutic avenue. To accelerate the discovery of genetic mod...
-
-⚠️ **CONFLICT:** 4 interesting talks at this time
-
----
-
 ### Modulating gene expression in human cells via high-throughput prime editing of
 
 **Type:** 🎤 Talk | **Relevance Score:** 45.12%
@@ -350,9 +364,9 @@ Modulating human gene expression by editing regulatory regions of the genome aff
 
 ---
 
-### 🔴 immune-related diseases
+### Atlas of cell type-specific genetic impacts of alternative polyadenylation in immune-related diseases
 
-**Type:** 🎤 Talk | **Relevance Score:** 47.37%
+**Type:** 🎤 Talk | **Relevance Score:** 44.40%
 
 **⏰ Time:** 2:15pm – 2:30pm
 
@@ -362,29 +376,11 @@ Modulating human gene expression by editing regulatory regions of the genome aff
 
 Background: Genetic variants associated with immune disease risk often act through complex regulatory mechanisms that vary across cell types and contexts. Alternative polyadenylation (APA), a key post-transcriptional process that shapes mRNA stability and translation, has emerged as an important mec...
 
-⚠️ **CONFLICT:** 2 interesting talks at this time
-
 ---
 
-### 🔴 Transcripts in the Human Genome
+### Identification of Unannotated mRNA Isoforms Driving Gene Regulation and Disease from Large-Scale RNA-seq data
 
-**Type:** 🎤 Talk | **Relevance Score:** 44.07%
-
-**⏰ Time:** 2:15pm – 2:30pm
-
-**👥 Authors:** Isabelle Heifetz Ament, Zelin Liu, PhD
-
-**📝 Abstract:**
-
-Endogenous retroviruses (ERVs), remnants of ancient retroviral integrations, comprise a substantial and largely uncharacterized portion of the human genome. To systematically resolve the complexity of the ERV transcriptome, we developed ERV-seq, a novel long-read RNA sequencing method incorporating ...
-
-⚠️ **CONFLICT:** 2 interesting talks at this time
-
----
-
-### Disease from Large-Scale RNA-seq data
-
-**Type:** 🎤 Talk | **Relevance Score:** 45.26%
+**Type:** 🎤 Talk | **Relevance Score:** 45.84%
 
 **⏰ Time:** 5:18pm – 5:36pm
 
@@ -408,13 +404,13 @@ Current RNA-seq methods for quantifying isoform expression depend heavily on pre
 
 Deep learning models that predict gene expression from DNA sequence have transformed our understanding of gene regulation. However, these models are primarily trained on bulk data from healthy tissues, and so cannot model gene expression in specific cell types or disease contexts. In contrast, singl...
 
-⚠️ **CONFLICT:** 2 interesting talks at this time
+⚠️ **CONFLICT:** 3 interesting talks at this time
 
 ---
 
-### 🔴 mapping of regulatory variants in long non-coding RNA
+### 🔴 Deep reinforcement learning tuned self-attention for nucleotide resolution mapping of regulatory variants in long non-coding RNA
 
-**Type:** 🎤 Talk | **Relevance Score:** 49.68%
+**Type:** 🎤 Talk | **Relevance Score:** 50.76%
 
 **⏰ Time:** 8:30am – 8:45am
 
@@ -424,27 +420,27 @@ Deep learning models that predict gene expression from DNA sequence have transfo
 
 Functional interpretation of variants linked to disease in long noncoding RNAs remains challenging because causal nucleotides are difficult to resolve. Reinforcement learning can optimize neural self-attention to improve regulatory predictions and localize disease-associated hotspots in lncRNAs. Lnc...
 
-⚠️ **CONFLICT:** 2 interesting talks at this time
+⚠️ **CONFLICT:** 3 interesting talks at this time
 
 ---
 
-### 🔴 specificity and activity
+### 🔴 disease genes illustrates a realistic, scalable path to dramatically reduce variants of uncertain significance
 
-**Type:** 🎤 Talk | **Relevance Score:** 45.22%
+**Type:** 🎤 Talk | **Relevance Score:** 44.35%
 
-**⏰ Time:** 8:45am – 9:00am
+**⏰ Time:** 8:30am – 8:45am
 
-**👥 Authors:** Katherine Mechling1, Erin Brettmann2, Stephen Beishir2 *et al.* (5 total)
+**👥 Authors:** Douglas M. Fowler, Malvika Tejura
 
 **📝 Abstract:**
 
-Base editing technologies allow for the precise and efficient installation of defined nucleotide substitutions into a target genome without double strand breaks. These editing methods can be used to generate cell lines and animal models for the study of a diverse range of topics, from molecular mech...
+Approximately 90% of missense variants in the ClinVar database are variants of uncertain significance (VUS), which arise due to a lack of evidence for variant classification and pose a central challenge to genomic medicine. Functional data from multiplexed assays of variant effect, and computational...
 
-⚠️ **CONFLICT:** 2 interesting talks at this time
+⚠️ **CONFLICT:** 3 interesting talks at this time
 
 ---
 
-### 🔴 T cell-specific causative variants underlying immune-mediated inflammatory
+### T cell-specific causative variants underlying immune-mediated inflammatory
 
 **Type:** 🎤 Talk | **Relevance Score:** 44.92%
 
@@ -456,13 +452,27 @@ Base editing technologies allow for the precise and efficient installation of de
 
 Immune-mediated inflammatory disorders (IMIDs) are characterized by an aberrant immune response against healthy cells, in part due to loss of T cell tolerance. IMIDs are common, affecting up to 5% of the Western population. A better understanding of underlying genetic loci is essential to accurately...
 
+---
+
+### 🔴 Integrating multi-omics and multi-context QTL data with GWAS reveals the genetic architecture of complex traits and improves the discovery of risk genes
+
+**Type:** 🎤 Talk | **Relevance Score:** 45.11%
+
+**⏰ Time:** 9:00am – 9:15am
+
+**👥 Authors:** Sheng Qian, Xiaotong Sun
+
+**📝 Abstract:**
+
+A common strategy to interpret GWAS findings is the use of expression QTLs. However, recent studies show limited colocalization between eQTLs and GWAS loci, and eQTLs explain only a small fraction of complex trait heritability. A natural strategy is to incorporate molecular QTLs beyond expression, a...
+
 ⚠️ **CONFLICT:** 2 interesting talks at this time
 
 ---
 
-### complex traits and disease
+### 🔴 GTEx and GENCODE 47 integration expands the role of long-noncoding RNAs in complex traits and disease
 
-**Type:** 🎤 Talk | **Relevance Score:** 44.37%
+**Type:** 🎤 Talk | **Relevance Score:** 44.86%
 
 **⏰ Time:** 9:00am – 9:15am
 
@@ -472,11 +482,13 @@ Immune-mediated inflammatory disorders (IMIDs) are characterized by an aberrant 
 
 Long non-coding RNAs (lncRNAs) have been challenging to definitively link to specific functions, but the recent GENCODE 47 release—which adds roughly 18,000 newly annotated lncRNA genes—presents a unique opportunity to investigate how genetic effects on these transcripts may shape complex traits. To...
 
+⚠️ **CONFLICT:** 2 interesting talks at this time
+
 ---
 
-### 🔴 Regulatory Networks from Single-Cell Multi-Omics
+### 🔴 Cell2net: A Deep Learning Framework to Decode Genotype-Specific Gene Regulatory Networks from Single-Cell Multi-Omics
 
-**Type:** 🎤 Talk | **Relevance Score:** 51.59%
+**Type:** 🎤 Talk | **Relevance Score:** 50.91%
 
 **⏰ Time:** 9:15am – 9:30am
 
@@ -490,9 +502,9 @@ Gene transcription is a fundamental process that governs cellular identity and f
 
 ---
 
-### 🔴 Genetic Diseases Using a Semi-Automated Bioinformatics Pipeline
+### 🔴 Enhanced Prediction of Antisense Oligonucleotide Therapy Eligibility for Rare Genetic Diseases Using a Semi-Automated Bioinformatics Pipeline
 
-**Type:** 🎤 Talk | **Relevance Score:** 44.50%
+**Type:** 🎤 Talk | **Relevance Score:** 45.02%
 
 **⏰ Time:** 9:15am – 9:30am
 
@@ -522,9 +534,9 @@ Deep learning models that predict functional genomic measurements from DNA seque
 
 ---
 
-### 🔴 Dosage-Time Task Learning
+### 🔴 DeepDR-ADT: Multi-Modal Deep Learning for Drug Repurposing with Auxiliary Dosage-Time Task Learning
 
-**Type:** 🎤 Talk | **Relevance Score:** 46.67%
+**Type:** 🎤 Talk | **Relevance Score:** 46.86%
 
 **⏰ Time:** 9:30am – 9:45am
 
@@ -538,25 +550,9 @@ Background: Drug repurposing accelerates drug discovery by identifying new thera
 
 ---
 
-### 🔴 returned to 23,840 adults and children
+### 🔴 Building a 100 million cell single cell atlas of drug perturbations across 50 human cell models for AI driven drug discovery
 
-**Type:** 🎤 Talk | **Relevance Score:** 48.54%
-
-**⏰ Time:** 9:45am – 10:00am
-
-**👥 Authors:** Lucinda P . Lawson, Cynthia A. Prows
-
-**📝 Abstract:**
-
-Incorporating genetic risk factors into disease screening is essential to advance precision medicine. The Electronic Medical Records and Genomics (eMERGE) Network  conducted a large-scale study returning genome-informed risk assessments (GIRAs) to 23,840 ASHG 2025 Annual Meeting Platform Abstracts i...
-
-⚠️ **CONFLICT:** 2 interesting talks at this time
-
----
-
-### 🔴 cell models for AI driven drug discovery
-
-**Type:** 🎤 Talk | **Relevance Score:** 46.42%
+**Type:** 🎤 Talk | **Relevance Score:** 49.18%
 
 **⏰ Time:** 9:45am – 10:00am
 
@@ -570,27 +566,27 @@ High performance machine learning methods for drug discovery demand training dat
 
 ---
 
-## 📅 Tuesday, October 14
+### 🔴 return of genome informed risk assessment results for common conditions returned to 23,840 adults and children
 
-### Integrative multi-omics analysis of spaceflight-induced physiological adaptations
+**Type:** 🎤 Talk | **Relevance Score:** 47.53%
 
-**Type:** 🎤 Talk | **Relevance Score:** 44.07%
+**⏰ Time:** 9:45am – 10:00am
 
-**⏰ Time:** 5:36pm – 5:54pm
-
-**👥 Authors:** JangKeun Kim, Eliah Overbey, Jeremy
+**👥 Authors:** Lucinda P . Lawson, Cynthia A. Prows
 
 **📝 Abstract:**
 
-The recent expansion of commercial, private, and multinational space missions has highlighted the urgent need for precision aerospace medicine. To address this gap, we leveraged the Space Omics and Medical Atlas (SOMA) datasets from the Inspiration4, Polaris Dawn, and Ax-2 missions to define spacefl...
+Incorporating genetic risk factors into disease screening is essential to advance precision medicine. The Electronic Medical Records and Genomics (eMERGE) Network  conducted a large-scale study returning genome-informed risk assessments (GIRAs) to 23,840 ASHG 2025 Annual Meeting Platform Abstracts i...
+
+⚠️ **CONFLICT:** 2 interesting talks at this time
 
 ---
 
 ## 📅 Wednesday, October 15
 
-### and 3.4 million cells
+### Single-cell-resolved phenotypes for Alzheimer's disease across 599 individuals and 3.4 million cells
 
-**Type:** 🎤 Talk | **Relevance Score:** 47.32%
+**Type:** 🎤 Talk | **Relevance Score:** 47.85%
 
 **⏰ Time:** 10:45am – 11:00am
 
@@ -602,9 +598,9 @@ Single-cell transcriptomics can identify disease driver genes and biomarkers wit
 
 ---
 
-### 🔴 expression analysis and optimal design of single-cell CRISPR screens
+### 🔴 PerTurbo: A scalable Bayesian framework for whole-transcriptome differential expression analysis and optimal design of single-cell CRISPR screens
 
-**Type:** 🎤 Talk | **Relevance Score:** 51.74%
+**Type:** 🎤 Talk | **Relevance Score:** 51.36%
 
 **⏰ Time:** 11:00am – 11:15am
 
@@ -634,9 +630,9 @@ Understanding how genetic variation shapes chromatin accessibility is central to
 
 ---
 
-### 🔴 Complex Phenotypes through Integration of Perturb-seq and Phenotypic Data
+### 🔴 PhenoBridge: A Unified Framework for Interpreting Molecular Effects on Complex Phenotypes through Integration of Perturb-seq and Phenotypic Data
 
-**Type:** 🎤 Talk | **Relevance Score:** 49.22%
+**Type:** 🎤 Talk | **Relevance Score:** 48.39%
 
 **⏰ Time:** 11:15am – 11:30am
 
@@ -650,9 +646,9 @@ Understanding how genetic variants affect complex traits through intermediate mo
 
 ---
 
-### 🔴 brains with Alzheimer’s disease
+### 🔴 A genome-wide epitranscriptomic regulatory landscape in the aged human brains with Alzheimer’s disease
 
-**Type:** 🎤 Talk | **Relevance Score:** 46.43%
+**Type:** 🎤 Talk | **Relevance Score:** 46.18%
 
 **⏰ Time:** 11:15am – 11:30am
 
@@ -680,9 +676,25 @@ Accurate 3D maps of chromatin are crucial for understanding gene regulation and 
 
 ---
 
-### Compartments With Spatial Transcriptomics
+### 🔴 Cell type-specific risk gene discovery in colorectal cancer through single-cell transcriptome-wide association study and regulatory element integration
 
-**Type:** 🎤 Talk | **Relevance Score:** 45.08%
+**Type:** 🎤 Talk | **Relevance Score:** 44.91%
+
+**⏰ Time:** 1:30pm – 1:45pm
+
+**👥 Authors:** Qing Li
+
+**📝 Abstract:**
+
+Most colorectal cancers (CRC) originate from colorectal polyps, evolving through either the conventional adenoma (AD) or serrated polyp (SP)–carcinoma sequence. While transcriptome-wide association studies (TWAS) using bulk normal colon tissues have identified over 400 putative CRC risk genes, tissu...
+
+⚠️ **CONFLICT:** 2 interesting talks at this time
+
+---
+
+### 🔴 mcDETECT: Characterizing mRNA Localization in Polarized Neuronal Compartments With Spatial Transcriptomics
+
+**Type:** 🎤 Talk | **Relevance Score:** 44.62%
 
 **⏰ Time:** 1:30pm – 1:45pm
 
@@ -692,11 +704,13 @@ Accurate 3D maps of chromatin are crucial for understanding gene regulation and 
 
 Background: Neurons are highly polarized cells with distinct distal compartments—such as synapses, dendrites, and axons—that enable connectivity and communication. Thousands of mRNAs have been shown to localize to these distal sites, supporting local protein synthesis critical for their plasticity a...
 
+⚠️ **CONFLICT:** 2 interesting talks at this time
+
 ---
 
-### Genes for Lung Cancer
+### Single-cell Transcriptome-wide Association Study Identifies Cell-Type-Specific Genes for Lung Cancer
 
-**Type:** 🎤 Talk | **Relevance Score:** 47.50%
+**Type:** 🎤 Talk | **Relevance Score:** 47.91%
 
 **⏰ Time:** 1:45pm – 2:00pm
 
@@ -708,9 +722,9 @@ Background: Transcriptome-wide association studies (TWAS) have uncovered over 10
 
 ---
 
-### 🔴 Hierarchies in Myeloid Cell Fate Decisions in Crohn's Disease
+### 🔴 Enhancer-Driven Gene Regulatory Networks Reveal Distinct Transcription Factor Hierarchies in Myeloid Cell Fate Decisions in Crohn's Disease
 
-**Type:** 🎤 Talk | **Relevance Score:** 48.45%
+**Type:** 🎤 Talk | **Relevance Score:** 47.40%
 
 **⏰ Time:** 2:00pm – 2:15pm
 
@@ -756,7 +770,7 @@ Multiplexed assays of variant effect (MAVEs) efficiently map genotypes to phenot
 
 ---
 
-### 🔴 Gene regulation in T cells depends on the severity of atopic dermatitis
+### Gene regulation in T cells depends on the severity of atopic dermatitis
 
 **Type:** 🎤 Talk | **Relevance Score:** 47.63%
 
@@ -768,24 +782,6 @@ Multiplexed assays of variant effect (MAVEs) efficiently map genotypes to phenot
 
 Atopic dermatitis (AD) is a complex skin disease with features of eczema, dry skin, and itching and affects 10-20% of the general population. AD may be exacerbated by environmental factors and infection, and cell-types, such keratinocytes and T cells, are involved in its pathogenesis. Genome-wide as...
 
-⚠️ **CONFLICT:** 2 interesting talks at this time
-
----
-
-### 🔴 Disease Genetic Scorecard Reveals Convergent Coding and Regulatory Variants
-
-**Type:** 🎤 Talk | **Relevance Score:** 46.44%
-
-**⏰ Time:** 2:15pm – 2:30pm
-
-**👥 Authors:** Hongbo Liu, Katalin Susztak
-
-**📝 Abstract:**
-
-Background: Genome-wide association studies (GWAS) have identified numerous DNA sequence variants associated with complex human diseases. However, over 90% of disease-associated variants reside in noncoding genome regions, and their functions in complex diseases remain largely unknown—a problem ofte...
-
-⚠️ **CONFLICT:** 2 interesting talks at this time
-
 ---
 
 ## 🔴 Scheduling Conflicts - Choose Wisely!
@@ -794,12 +790,12 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Friday, October 17 at 2:00pm – 2:05pm
 
-- 🎤 **autoimmune disease risk** (Relevance: 50.44%)
+- 🎤 **Genetic variants regulating immune cell-cell interactions are key drivers for autoimmune disease risk** (Relevance: 49.82%)
   - Type: Talk
   - Location: TBD
   - Preview: GWAS has identified hundreds of variants associated with autoimmune diseases, most of which are non-...
 
-- 🎤 **Expression in B Cells** (Relevance: 45.88%)
+- 🎤 **Defining the Molecular Effect of the Autoimmune-Risk Allele on Surface CD40 Expression in B Cells** (Relevance: 46.57%)
   - Type: Talk
   - Location: TBD
   - Preview: GWAS has revealed the genetics of autoimmunity. While polygenic analyses emphasize T cells, they may...
@@ -808,12 +804,12 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Friday, October 17 at 2:00pm – 2:05pm
 
-- 🎤 **autoimmune disease risk** (Relevance: 50.44%)
+- 🎤 **Genetic variants regulating immune cell-cell interactions are key drivers for autoimmune disease risk** (Relevance: 49.82%)
   - Type: Talk
   - Location: TBD
   - Preview: GWAS has identified hundreds of variants associated with autoimmune diseases, most of which are non-...
 
-- 🎤 **Expression in B Cells** (Relevance: 45.88%)
+- 🎤 **Defining the Molecular Effect of the Autoimmune-Risk Allele on Surface CD40 Expression in B Cells** (Relevance: 46.57%)
   - Type: Talk
   - Location: TBD
   - Preview: GWAS has revealed the genetics of autoimmunity. While polygenic analyses emphasize T cells, they may...
@@ -822,12 +818,12 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Friday, October 17 at 2:05pm – 2:10pm
 
-- 🎤 **function and disease risk** (Relevance: 49.28%)
+- 🎤 **Genetic regulation of cell-type–specific chromatin accessibility shapes immune function and disease risk** (Relevance: 47.77%)
   - Type: Talk
   - Location: TBD
   - Preview: Understanding how genetic variation regulates gene expression at the single-cell level is critical f...
 
-- 🎤 **roles of alveolar cells in lung cancer etiology** (Relevance: 45.54%)
+- 🎤 **Single-cell eQTL dataset of lung tissues from Asian never-smokers highlights the roles of alveolar cells in lung cancer etiology** (Relevance: 46.66%)
   - Type: Talk
   - Location: TBD
   - Preview: Background: Single-cell expression quantitative trait loci (sc-eQTL) studies are instrumental in det...
@@ -836,12 +832,12 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Friday, October 17 at 2:05pm – 2:10pm
 
-- 🎤 **function and disease risk** (Relevance: 49.28%)
+- 🎤 **Genetic regulation of cell-type–specific chromatin accessibility shapes immune function and disease risk** (Relevance: 47.77%)
   - Type: Talk
   - Location: TBD
   - Preview: Understanding how genetic variation regulates gene expression at the single-cell level is critical f...
 
-- 🎤 **roles of alveolar cells in lung cancer etiology** (Relevance: 45.54%)
+- 🎤 **Single-cell eQTL dataset of lung tissues from Asian never-smokers highlights the roles of alveolar cells in lung cancer etiology** (Relevance: 46.66%)
   - Type: Talk
   - Location: TBD
   - Preview: Background: Single-cell expression quantitative trait loci (sc-eQTL) studies are instrumental in det...
@@ -850,125 +846,97 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Thursday, October 16 at 1:45pm – 2:00pm
 
-- 🎤 **Genomic Rearrangements in Human Hematopoietic Stem Cells** (Relevance: 47.06%)
+- 🎤 **MicroRNA Perturb-Seq Reveals Genome-wide Functional Targets and Deleterious 3’UTR Variants** (Relevance: 47.60%)
+  - Type: Talk
+  - Location: TBD
+  - Preview: MicroRNAs (miRNAs) are essential regulators of post-transcriptional gene expression, yet our underst...
+
+- 🎤 **High-Coverage Whole-Genome Sequencing Uncovers Complex CRISPR-Induced Genomic Rearrangements in Human Hematopoietic Stem Cells** (Relevance: 46.38%)
   - Type: Talk
   - Location: TBD
   - Preview: CRISPR-Cas genome editing introduces a range of genomic alterations that must be thoroughly characte...
 
-- 🎤 **Deleterious 3’UTR Variants** (Relevance: 46.13%)
+- 🎤 **Identification of genetic modifiers of somatic instability across multiple repeat expansion disease loci using in vivo CRISPR–Cas9 genome editing** (Relevance: 44.76%)
   - Type: Talk
   - Location: TBD
-  - Preview: MicroRNAs (miRNAs) are essential regulators of post-transcriptional gene expression, yet our underst...
+  - Preview: Somatic expansion of disease-causing repeats is a critical driver of disease pathogenesis in Hunting...
 
 - 🎤 **Genetic control of regulatory dispersion across human and chimpanzee cell** (Relevance: 44.62%)
   - Type: Talk
   - Location: TBD
   - Preview: Gene regulatory mutations are a powerful engine of phenotypic diversity across cell types, individua...
-
-- 🎤 **expansion disease loci using in vivo CRISPR–Cas9 genome editing** (Relevance: 44.49%)
-  - Type: Talk
-  - Location: TBD
-  - Preview: Somatic expansion of disease-causing repeats is a critical driver of disease pathogenesis in Hunting...
 
 ---
 
 ### Thursday, October 16 at 1:45pm – 2:00pm
 
-- 🎤 **Genomic Rearrangements in Human Hematopoietic Stem Cells** (Relevance: 47.06%)
+- 🎤 **MicroRNA Perturb-Seq Reveals Genome-wide Functional Targets and Deleterious 3’UTR Variants** (Relevance: 47.60%)
+  - Type: Talk
+  - Location: TBD
+  - Preview: MicroRNAs (miRNAs) are essential regulators of post-transcriptional gene expression, yet our underst...
+
+- 🎤 **High-Coverage Whole-Genome Sequencing Uncovers Complex CRISPR-Induced Genomic Rearrangements in Human Hematopoietic Stem Cells** (Relevance: 46.38%)
   - Type: Talk
   - Location: TBD
   - Preview: CRISPR-Cas genome editing introduces a range of genomic alterations that must be thoroughly characte...
 
-- 🎤 **Deleterious 3’UTR Variants** (Relevance: 46.13%)
+- 🎤 **Identification of genetic modifiers of somatic instability across multiple repeat expansion disease loci using in vivo CRISPR–Cas9 genome editing** (Relevance: 44.76%)
   - Type: Talk
   - Location: TBD
-  - Preview: MicroRNAs (miRNAs) are essential regulators of post-transcriptional gene expression, yet our underst...
+  - Preview: Somatic expansion of disease-causing repeats is a critical driver of disease pathogenesis in Hunting...
 
 - 🎤 **Genetic control of regulatory dispersion across human and chimpanzee cell** (Relevance: 44.62%)
   - Type: Talk
   - Location: TBD
   - Preview: Gene regulatory mutations are a powerful engine of phenotypic diversity across cell types, individua...
-
-- 🎤 **expansion disease loci using in vivo CRISPR–Cas9 genome editing** (Relevance: 44.49%)
-  - Type: Talk
-  - Location: TBD
-  - Preview: Somatic expansion of disease-causing repeats is a critical driver of disease pathogenesis in Hunting...
 
 ---
 
 ### Thursday, October 16 at 1:45pm – 2:00pm
 
-- 🎤 **Genomic Rearrangements in Human Hematopoietic Stem Cells** (Relevance: 47.06%)
+- 🎤 **MicroRNA Perturb-Seq Reveals Genome-wide Functional Targets and Deleterious 3’UTR Variants** (Relevance: 47.60%)
+  - Type: Talk
+  - Location: TBD
+  - Preview: MicroRNAs (miRNAs) are essential regulators of post-transcriptional gene expression, yet our underst...
+
+- 🎤 **High-Coverage Whole-Genome Sequencing Uncovers Complex CRISPR-Induced Genomic Rearrangements in Human Hematopoietic Stem Cells** (Relevance: 46.38%)
   - Type: Talk
   - Location: TBD
   - Preview: CRISPR-Cas genome editing introduces a range of genomic alterations that must be thoroughly characte...
 
-- 🎤 **Deleterious 3’UTR Variants** (Relevance: 46.13%)
+- 🎤 **Identification of genetic modifiers of somatic instability across multiple repeat expansion disease loci using in vivo CRISPR–Cas9 genome editing** (Relevance: 44.76%)
   - Type: Talk
   - Location: TBD
-  - Preview: MicroRNAs (miRNAs) are essential regulators of post-transcriptional gene expression, yet our underst...
+  - Preview: Somatic expansion of disease-causing repeats is a critical driver of disease pathogenesis in Hunting...
 
 - 🎤 **Genetic control of regulatory dispersion across human and chimpanzee cell** (Relevance: 44.62%)
   - Type: Talk
   - Location: TBD
   - Preview: Gene regulatory mutations are a powerful engine of phenotypic diversity across cell types, individua...
-
-- 🎤 **expansion disease loci using in vivo CRISPR–Cas9 genome editing** (Relevance: 44.49%)
-  - Type: Talk
-  - Location: TBD
-  - Preview: Somatic expansion of disease-causing repeats is a critical driver of disease pathogenesis in Hunting...
 
 ---
 
 ### Thursday, October 16 at 1:45pm – 2:00pm
 
-- 🎤 **Genomic Rearrangements in Human Hematopoietic Stem Cells** (Relevance: 47.06%)
+- 🎤 **MicroRNA Perturb-Seq Reveals Genome-wide Functional Targets and Deleterious 3’UTR Variants** (Relevance: 47.60%)
+  - Type: Talk
+  - Location: TBD
+  - Preview: MicroRNAs (miRNAs) are essential regulators of post-transcriptional gene expression, yet our underst...
+
+- 🎤 **High-Coverage Whole-Genome Sequencing Uncovers Complex CRISPR-Induced Genomic Rearrangements in Human Hematopoietic Stem Cells** (Relevance: 46.38%)
   - Type: Talk
   - Location: TBD
   - Preview: CRISPR-Cas genome editing introduces a range of genomic alterations that must be thoroughly characte...
 
-- 🎤 **Deleterious 3’UTR Variants** (Relevance: 46.13%)
+- 🎤 **Identification of genetic modifiers of somatic instability across multiple repeat expansion disease loci using in vivo CRISPR–Cas9 genome editing** (Relevance: 44.76%)
   - Type: Talk
   - Location: TBD
-  - Preview: MicroRNAs (miRNAs) are essential regulators of post-transcriptional gene expression, yet our underst...
+  - Preview: Somatic expansion of disease-causing repeats is a critical driver of disease pathogenesis in Hunting...
 
 - 🎤 **Genetic control of regulatory dispersion across human and chimpanzee cell** (Relevance: 44.62%)
   - Type: Talk
   - Location: TBD
   - Preview: Gene regulatory mutations are a powerful engine of phenotypic diversity across cell types, individua...
-
-- 🎤 **expansion disease loci using in vivo CRISPR–Cas9 genome editing** (Relevance: 44.49%)
-  - Type: Talk
-  - Location: TBD
-  - Preview: Somatic expansion of disease-causing repeats is a critical driver of disease pathogenesis in Hunting...
-
----
-
-### Thursday, October 16 at 2:15pm – 2:30pm
-
-- 🎤 **immune-related diseases** (Relevance: 47.37%)
-  - Type: Talk
-  - Location: TBD
-  - Preview: Background: Genetic variants associated with immune disease risk often act through complex regulator...
-
-- 🎤 **Transcripts in the Human Genome** (Relevance: 44.07%)
-  - Type: Talk
-  - Location: TBD
-  - Preview: Endogenous retroviruses (ERVs), remnants of ancient retroviral integrations, comprise a substantial ...
-
----
-
-### Thursday, October 16 at 2:15pm – 2:30pm
-
-- 🎤 **immune-related diseases** (Relevance: 47.37%)
-  - Type: Talk
-  - Location: TBD
-  - Preview: Background: Genetic variants associated with immune disease risk often act through complex regulator...
-
-- 🎤 **Transcripts in the Human Genome** (Relevance: 44.07%)
-  - Type: Talk
-  - Location: TBD
-  - Preview: Endogenous retroviruses (ERVs), remnants of ancient retroviral integrations, comprise a substantial ...
 
 ---
 
@@ -979,10 +947,15 @@ These time slots have multiple relevant talks. You'll need to choose which to at
   - Location: TBD
   - Preview: Deep learning models that predict gene expression from DNA sequence have transformed our understandi...
 
-- 🎤 **mapping of regulatory variants in long non-coding RNA** (Relevance: 49.68%)
+- 🎤 **Deep reinforcement learning tuned self-attention for nucleotide resolution mapping of regulatory variants in long non-coding RNA** (Relevance: 50.76%)
   - Type: Talk
   - Location: TBD
   - Preview: Functional interpretation of variants linked to disease in long noncoding RNAs remains challenging b...
+
+- 🎤 **disease genes illustrates a realistic, scalable path to dramatically reduce variants of uncertain significance** (Relevance: 44.35%)
+  - Type: Talk
+  - Location: TBD
+  - Preview: Approximately 90% of missense variants in the ClinVar database are variants of uncertain significanc...
 
 ---
 
@@ -993,49 +966,73 @@ These time slots have multiple relevant talks. You'll need to choose which to at
   - Location: TBD
   - Preview: Deep learning models that predict gene expression from DNA sequence have transformed our understandi...
 
-- 🎤 **mapping of regulatory variants in long non-coding RNA** (Relevance: 49.68%)
+- 🎤 **Deep reinforcement learning tuned self-attention for nucleotide resolution mapping of regulatory variants in long non-coding RNA** (Relevance: 50.76%)
   - Type: Talk
   - Location: TBD
   - Preview: Functional interpretation of variants linked to disease in long noncoding RNAs remains challenging b...
 
----
-
-### Thursday, October 16 at 8:45am – 9:00am
-
-- 🎤 **specificity and activity** (Relevance: 45.22%)
+- 🎤 **disease genes illustrates a realistic, scalable path to dramatically reduce variants of uncertain significance** (Relevance: 44.35%)
   - Type: Talk
   - Location: TBD
-  - Preview: Base editing technologies allow for the precise and efficient installation of defined nucleotide sub...
-
-- 🎤 **T cell-specific causative variants underlying immune-mediated inflammatory** (Relevance: 44.92%)
-  - Type: Talk
-  - Location: TBD
-  - Preview: Immune-mediated inflammatory disorders (IMIDs) are characterized by an aberrant immune response agai...
+  - Preview: Approximately 90% of missense variants in the ClinVar database are variants of uncertain significanc...
 
 ---
 
-### Thursday, October 16 at 8:45am – 9:00am
+### Thursday, October 16 at 8:30am – 8:45am
 
-- 🎤 **specificity and activity** (Relevance: 45.22%)
+- 🎤 **Decoding gene expression in cellular and disease states with deep learning** (Relevance: 52.24%)
   - Type: Talk
   - Location: TBD
-  - Preview: Base editing technologies allow for the precise and efficient installation of defined nucleotide sub...
+  - Preview: Deep learning models that predict gene expression from DNA sequence have transformed our understandi...
 
-- 🎤 **T cell-specific causative variants underlying immune-mediated inflammatory** (Relevance: 44.92%)
+- 🎤 **Deep reinforcement learning tuned self-attention for nucleotide resolution mapping of regulatory variants in long non-coding RNA** (Relevance: 50.76%)
   - Type: Talk
   - Location: TBD
-  - Preview: Immune-mediated inflammatory disorders (IMIDs) are characterized by an aberrant immune response agai...
+  - Preview: Functional interpretation of variants linked to disease in long noncoding RNAs remains challenging b...
+
+- 🎤 **disease genes illustrates a realistic, scalable path to dramatically reduce variants of uncertain significance** (Relevance: 44.35%)
+  - Type: Talk
+  - Location: TBD
+  - Preview: Approximately 90% of missense variants in the ClinVar database are variants of uncertain significanc...
+
+---
+
+### Thursday, October 16 at 9:00am – 9:15am
+
+- 🎤 **Integrating multi-omics and multi-context QTL data with GWAS reveals the genetic architecture of complex traits and improves the discovery of risk genes** (Relevance: 45.11%)
+  - Type: Talk
+  - Location: TBD
+  - Preview: A common strategy to interpret GWAS findings is the use of expression QTLs. However, recent studies ...
+
+- 🎤 **GTEx and GENCODE 47 integration expands the role of long-noncoding RNAs in complex traits and disease** (Relevance: 44.86%)
+  - Type: Talk
+  - Location: TBD
+  - Preview: Long non-coding RNAs (lncRNAs) have been challenging to definitively link to specific functions, but...
+
+---
+
+### Thursday, October 16 at 9:00am – 9:15am
+
+- 🎤 **Integrating multi-omics and multi-context QTL data with GWAS reveals the genetic architecture of complex traits and improves the discovery of risk genes** (Relevance: 45.11%)
+  - Type: Talk
+  - Location: TBD
+  - Preview: A common strategy to interpret GWAS findings is the use of expression QTLs. However, recent studies ...
+
+- 🎤 **GTEx and GENCODE 47 integration expands the role of long-noncoding RNAs in complex traits and disease** (Relevance: 44.86%)
+  - Type: Talk
+  - Location: TBD
+  - Preview: Long non-coding RNAs (lncRNAs) have been challenging to definitively link to specific functions, but...
 
 ---
 
 ### Thursday, October 16 at 9:15am – 9:30am
 
-- 🎤 **Regulatory Networks from Single-Cell Multi-Omics** (Relevance: 51.59%)
+- 🎤 **Cell2net: A Deep Learning Framework to Decode Genotype-Specific Gene Regulatory Networks from Single-Cell Multi-Omics** (Relevance: 50.91%)
   - Type: Talk
   - Location: TBD
   - Preview: Gene transcription is a fundamental process that governs cellular identity and function. It is tight...
 
-- 🎤 **Genetic Diseases Using a Semi-Automated Bioinformatics Pipeline** (Relevance: 44.50%)
+- 🎤 **Enhanced Prediction of Antisense Oligonucleotide Therapy Eligibility for Rare Genetic Diseases Using a Semi-Automated Bioinformatics Pipeline** (Relevance: 45.02%)
   - Type: Talk
   - Location: TBD
   - Preview: Over 7,000 rare diseases have been identified, many of which are severe, begin in childhood, and lac...
@@ -1044,12 +1041,12 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Thursday, October 16 at 9:15am – 9:30am
 
-- 🎤 **Regulatory Networks from Single-Cell Multi-Omics** (Relevance: 51.59%)
+- 🎤 **Cell2net: A Deep Learning Framework to Decode Genotype-Specific Gene Regulatory Networks from Single-Cell Multi-Omics** (Relevance: 50.91%)
   - Type: Talk
   - Location: TBD
   - Preview: Gene transcription is a fundamental process that governs cellular identity and function. It is tight...
 
-- 🎤 **Genetic Diseases Using a Semi-Automated Bioinformatics Pipeline** (Relevance: 44.50%)
+- 🎤 **Enhanced Prediction of Antisense Oligonucleotide Therapy Eligibility for Rare Genetic Diseases Using a Semi-Automated Bioinformatics Pipeline** (Relevance: 45.02%)
   - Type: Talk
   - Location: TBD
   - Preview: Over 7,000 rare diseases have been identified, many of which are severe, begin in childhood, and lac...
@@ -1063,7 +1060,7 @@ These time slots have multiple relevant talks. You'll need to choose which to at
   - Location: TBD
   - Preview: Deep learning models that predict functional genomic measurements from DNA sequence are powerful too...
 
-- 🎤 **Dosage-Time Task Learning** (Relevance: 46.67%)
+- 🎤 **DeepDR-ADT: Multi-Modal Deep Learning for Drug Repurposing with Auxiliary Dosage-Time Task Learning** (Relevance: 46.86%)
   - Type: Talk
   - Location: TBD
   - Preview: Background: Drug repurposing accelerates drug discovery by identifying new therapeutic uses for exis...
@@ -1077,7 +1074,7 @@ These time slots have multiple relevant talks. You'll need to choose which to at
   - Location: TBD
   - Preview: Deep learning models that predict functional genomic measurements from DNA sequence are powerful too...
 
-- 🎤 **Dosage-Time Task Learning** (Relevance: 46.67%)
+- 🎤 **DeepDR-ADT: Multi-Modal Deep Learning for Drug Repurposing with Auxiliary Dosage-Time Task Learning** (Relevance: 46.86%)
   - Type: Talk
   - Location: TBD
   - Preview: Background: Drug repurposing accelerates drug discovery by identifying new therapeutic uses for exis...
@@ -1086,35 +1083,35 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Thursday, October 16 at 9:45am – 10:00am
 
-- 🎤 **returned to 23,840 adults and children** (Relevance: 48.54%)
-  - Type: Talk
-  - Location: TBD
-  - Preview: Incorporating genetic risk factors into disease screening is essential to advance precision medicine...
-
-- 🎤 **cell models for AI driven drug discovery** (Relevance: 46.42%)
+- 🎤 **Building a 100 million cell single cell atlas of drug perturbations across 50 human cell models for AI driven drug discovery** (Relevance: 49.18%)
   - Type: Talk
   - Location: TBD
   - Preview: High performance machine learning methods for drug discovery demand training data that capture trans...
+
+- 🎤 **return of genome informed risk assessment results for common conditions returned to 23,840 adults and children** (Relevance: 47.53%)
+  - Type: Talk
+  - Location: TBD
+  - Preview: Incorporating genetic risk factors into disease screening is essential to advance precision medicine...
 
 ---
 
 ### Thursday, October 16 at 9:45am – 10:00am
 
-- 🎤 **returned to 23,840 adults and children** (Relevance: 48.54%)
-  - Type: Talk
-  - Location: TBD
-  - Preview: Incorporating genetic risk factors into disease screening is essential to advance precision medicine...
-
-- 🎤 **cell models for AI driven drug discovery** (Relevance: 46.42%)
+- 🎤 **Building a 100 million cell single cell atlas of drug perturbations across 50 human cell models for AI driven drug discovery** (Relevance: 49.18%)
   - Type: Talk
   - Location: TBD
   - Preview: High performance machine learning methods for drug discovery demand training data that capture trans...
 
+- 🎤 **return of genome informed risk assessment results for common conditions returned to 23,840 adults and children** (Relevance: 47.53%)
+  - Type: Talk
+  - Location: TBD
+  - Preview: Incorporating genetic risk factors into disease screening is essential to advance precision medicine...
+
 ---
 
 ### Wednesday, October 15 at 11:00am – 11:15am
 
-- 🎤 **expression analysis and optimal design of single-cell CRISPR screens** (Relevance: 51.74%)
+- 🎤 **PerTurbo: A scalable Bayesian framework for whole-transcriptome differential expression analysis and optimal design of single-cell CRISPR screens** (Relevance: 51.36%)
   - Type: Talk
   - Location: TBD
   - Preview: Pooled single-cell CRISPR screens, such as Perturb-seq, link genetic perturbations to transcriptomic...
@@ -1128,7 +1125,7 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Wednesday, October 15 at 11:00am – 11:15am
 
-- 🎤 **expression analysis and optimal design of single-cell CRISPR screens** (Relevance: 51.74%)
+- 🎤 **PerTurbo: A scalable Bayesian framework for whole-transcriptome differential expression analysis and optimal design of single-cell CRISPR screens** (Relevance: 51.36%)
   - Type: Talk
   - Location: TBD
   - Preview: Pooled single-cell CRISPR screens, such as Perturb-seq, link genetic perturbations to transcriptomic...
@@ -1142,12 +1139,12 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Wednesday, October 15 at 11:15am – 11:30am
 
-- 🎤 **Complex Phenotypes through Integration of Perturb-seq and Phenotypic Data** (Relevance: 49.22%)
+- 🎤 **PhenoBridge: A Unified Framework for Interpreting Molecular Effects on Complex Phenotypes through Integration of Perturb-seq and Phenotypic Data** (Relevance: 48.39%)
   - Type: Talk
   - Location: TBD
   - Preview: Understanding how genetic variants affect complex traits through intermediate molecular mechanisms r...
 
-- 🎤 **brains with Alzheimer’s disease** (Relevance: 46.43%)
+- 🎤 **A genome-wide epitranscriptomic regulatory landscape in the aged human brains with Alzheimer’s disease** (Relevance: 46.18%)
   - Type: Talk
   - Location: TBD
   - Preview: RNA editing is a post-transcriptional modification comprising insertion, deletion, and base substitu...
@@ -1156,21 +1153,49 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Wednesday, October 15 at 11:15am – 11:30am
 
-- 🎤 **Complex Phenotypes through Integration of Perturb-seq and Phenotypic Data** (Relevance: 49.22%)
+- 🎤 **PhenoBridge: A Unified Framework for Interpreting Molecular Effects on Complex Phenotypes through Integration of Perturb-seq and Phenotypic Data** (Relevance: 48.39%)
   - Type: Talk
   - Location: TBD
   - Preview: Understanding how genetic variants affect complex traits through intermediate molecular mechanisms r...
 
-- 🎤 **brains with Alzheimer’s disease** (Relevance: 46.43%)
+- 🎤 **A genome-wide epitranscriptomic regulatory landscape in the aged human brains with Alzheimer’s disease** (Relevance: 46.18%)
   - Type: Talk
   - Location: TBD
   - Preview: RNA editing is a post-transcriptional modification comprising insertion, deletion, and base substitu...
 
 ---
 
+### Wednesday, October 15 at 1:30pm – 1:45pm
+
+- 🎤 **Cell type-specific risk gene discovery in colorectal cancer through single-cell transcriptome-wide association study and regulatory element integration** (Relevance: 44.91%)
+  - Type: Talk
+  - Location: TBD
+  - Preview: Most colorectal cancers (CRC) originate from colorectal polyps, evolving through either the conventi...
+
+- 🎤 **mcDETECT: Characterizing mRNA Localization in Polarized Neuronal Compartments With Spatial Transcriptomics** (Relevance: 44.62%)
+  - Type: Talk
+  - Location: TBD
+  - Preview: Background: Neurons are highly polarized cells with distinct distal compartments—such as synapses, d...
+
+---
+
+### Wednesday, October 15 at 1:30pm – 1:45pm
+
+- 🎤 **Cell type-specific risk gene discovery in colorectal cancer through single-cell transcriptome-wide association study and regulatory element integration** (Relevance: 44.91%)
+  - Type: Talk
+  - Location: TBD
+  - Preview: Most colorectal cancers (CRC) originate from colorectal polyps, evolving through either the conventi...
+
+- 🎤 **mcDETECT: Characterizing mRNA Localization in Polarized Neuronal Compartments With Spatial Transcriptomics** (Relevance: 44.62%)
+  - Type: Talk
+  - Location: TBD
+  - Preview: Background: Neurons are highly polarized cells with distinct distal compartments—such as synapses, d...
+
+---
+
 ### Wednesday, October 15 at 2:00pm – 2:15pm
 
-- 🎤 **Hierarchies in Myeloid Cell Fate Decisions in Crohn's Disease** (Relevance: 48.45%)
+- 🎤 **Enhancer-Driven Gene Regulatory Networks Reveal Distinct Transcription Factor Hierarchies in Myeloid Cell Fate Decisions in Crohn's Disease** (Relevance: 47.40%)
   - Type: Talk
   - Location: TBD
   - Preview: Background: Crohn's disease (CD) is a type of inflammatory bowel disease (IBD) characterized by chro...
@@ -1189,7 +1214,7 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Wednesday, October 15 at 2:00pm – 2:15pm
 
-- 🎤 **Hierarchies in Myeloid Cell Fate Decisions in Crohn's Disease** (Relevance: 48.45%)
+- 🎤 **Enhancer-Driven Gene Regulatory Networks Reveal Distinct Transcription Factor Hierarchies in Myeloid Cell Fate Decisions in Crohn's Disease** (Relevance: 47.40%)
   - Type: Talk
   - Location: TBD
   - Preview: Background: Crohn's disease (CD) is a type of inflammatory bowel disease (IBD) characterized by chro...
@@ -1208,7 +1233,7 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Wednesday, October 15 at 2:00pm – 2:15pm
 
-- 🎤 **Hierarchies in Myeloid Cell Fate Decisions in Crohn's Disease** (Relevance: 48.45%)
+- 🎤 **Enhancer-Driven Gene Regulatory Networks Reveal Distinct Transcription Factor Hierarchies in Myeloid Cell Fate Decisions in Crohn's Disease** (Relevance: 47.40%)
   - Type: Talk
   - Location: TBD
   - Preview: Background: Crohn's disease (CD) is a type of inflammatory bowel disease (IBD) characterized by chro...
@@ -1222,34 +1247,6 @@ These time slots have multiple relevant talks. You'll need to choose which to at
   - Type: Talk
   - Location: TBD
   - Preview: Multiplexed assays of variant effect (MAVEs) efficiently map genotypes to phenotypes by assessing th...
-
----
-
-### Wednesday, October 15 at 2:15pm – 2:30pm
-
-- 🎤 **Gene regulation in T cells depends on the severity of atopic dermatitis** (Relevance: 47.63%)
-  - Type: Talk
-  - Location: TBD
-  - Preview: Atopic dermatitis (AD) is a complex skin disease with features of eczema, dry skin, and itching and ...
-
-- 🎤 **Disease Genetic Scorecard Reveals Convergent Coding and Regulatory Variants** (Relevance: 46.44%)
-  - Type: Talk
-  - Location: TBD
-  - Preview: Background: Genome-wide association studies (GWAS) have identified numerous DNA sequence variants as...
-
----
-
-### Wednesday, October 15 at 2:15pm – 2:30pm
-
-- 🎤 **Gene regulation in T cells depends on the severity of atopic dermatitis** (Relevance: 47.63%)
-  - Type: Talk
-  - Location: TBD
-  - Preview: Atopic dermatitis (AD) is a complex skin disease with features of eczema, dry skin, and itching and ...
-
-- 🎤 **Disease Genetic Scorecard Reveals Convergent Coding and Regulatory Variants** (Relevance: 46.44%)
-  - Type: Talk
-  - Location: TBD
-  - Preview: Background: Genome-wide association studies (GWAS) have identified numerous DNA sequence variants as...
 
 ---
 
