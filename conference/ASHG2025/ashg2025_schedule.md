@@ -1,6 +1,6 @@
 # ASHG2025 - Personalized Schedule
 
-*Generated on: 2025-10-11 11:18:41*
+*Generated on: 2025-10-11 16:16:54*
 
 **Total Relevant Sessions: 50**
 
@@ -10,7 +10,6 @@
 
 ## 🎯 Your Research Interests
 
-- *Generated on: 2025-10-11 11:12:34*
 - statistical fine-mapping, Bayesian approaches, machine learning approaches, deep learning approaches
 - eQTL, multi-omics, regulatory elements, regulatory functions
 - perturb-seq, crop-seq, CRISPR - pertuebation
@@ -23,23 +22,9 @@
 
 ## 📅 Friday, October 17
 
-### Linking single-cell transcriptomic and genomic changes in the aging human brain
-
-**Relevance Score:** 43.85%
-
-**⏰ Time:** 10:45am – 11:00am
-
-**👥 Authors:** Tianxiong Yu, Ailsa M. Jeffries
-
-**📝 Abstract:**
-
-Aging disrupts diverse biological processes across tissues, often driven by the gradual accumulation of stochastic damage in individual cells. While bulk transcriptome studies have mapped age-associated gene expression changes in the human brain, the cell-type-specific transcriptomic and genomic alt...
-
----
-
 ### generative AI is not suitable for variant classification
 
-**Relevance Score:** 44.53%
+**Type:** 🎤 Talk | **Relevance Score:** 44.23%
 
 **⏰ Time:** 11:00am – 11:15am
 
@@ -53,7 +38,7 @@ A clinical scientist receives a genetic testing result for a patient. They are n
 
 ### human retina enabled by single-cell long-read RNA sequencing
 
-**Relevance Score:** 47.07%
+**Type:** 🎤 Talk | **Relevance Score:** 47.65%
 
 **⏰ Time:** 11:15am – 11:30am
 
@@ -67,7 +52,7 @@ Background: Regulation of gene expression and transcript structure contributes t
 
 ### Population scale single-cell multi-omic analysis of clonal haematopoiesis
 
-**Relevance Score:** 46.41%
+**Type:** 🎤 Talk | **Relevance Score:** 46.56%
 
 **⏰ Time:** 11:30am – 11:45am
 
@@ -81,7 +66,7 @@ Clonal haematopoiesis (CH) is an age-related process characterised by the accumu
 
 ### A scalable framework to link rare human variants to disease phenotypes using
 
-**Relevance Score:** 44.20%
+**Type:** 🎤 Talk | **Relevance Score:** 44.72%
 
 **⏰ Time:** 1:40pm – 1:45pm
 
@@ -95,7 +80,7 @@ Large-scale sequencing projects have revealed millions of rare genetic variants 
 
 ### trajectory reveals variable inter-individual epigenetic differences
 
-**Relevance Score:** 44.37%
+**Type:** 🎤 Talk | **Relevance Score:** 44.76%
 
 **⏰ Time:** 1:45pm – 1:50pm
 
@@ -109,7 +94,7 @@ Reprogramming of somatic cells to induced pluripotent stem cells (iPSCs) is a pr
 
 ### Architecture of Chronic Kidney Disease
 
-**Relevance Score:** 46.34%
+**Type:** 🎤 Talk | **Relevance Score:** 46.77%
 
 **⏰ Time:** 1:50pm – 1:55pm
 
@@ -123,7 +108,7 @@ Chronic kidney disease (CKD) affects over 800 million people worldwide, posing s
 
 ### 🔴 autoimmune disease risk
 
-**Relevance Score:** 49.81%
+**Type:** 🎤 Talk | **Relevance Score:** 50.44%
 
 **⏰ Time:** 2:00pm – 2:05pm
 
@@ -139,7 +124,7 @@ GWAS has identified hundreds of variants associated with autoimmune diseases, mo
 
 ### 🔴 Expression in B Cells
 
-**Relevance Score:** 45.29%
+**Type:** 🎤 Talk | **Relevance Score:** 45.88%
 
 **⏰ Time:** 2:00pm – 2:05pm
 
@@ -155,7 +140,7 @@ GWAS has revealed the genetics of autoimmunity. While polygenic analyses emphasi
 
 ### 🔴 function and disease risk
 
-**Relevance Score:** 48.76%
+**Type:** 🎤 Talk | **Relevance Score:** 49.28%
 
 **⏰ Time:** 2:05pm – 2:10pm
 
@@ -171,7 +156,7 @@ Understanding how genetic variation regulates gene expression at the single-cell
 
 ### 🔴 roles of alveolar cells in lung cancer etiology
 
-**Relevance Score:** 45.68%
+**Type:** 🎤 Talk | **Relevance Score:** 45.54%
 
 **⏰ Time:** 2:05pm – 2:10pm
 
@@ -187,7 +172,7 @@ Background: Single-cell expression quantitative trait loci (sc-eQTL) studies are
 
 ### PRISM-Multiplexed Cancer Cell Lines Sequenced with SBX
 
-**Relevance Score:** 44.16%
+**Type:** 🎤 Talk | **Relevance Score:** 44.54%
 
 **⏰ Time:** 2:15pm – 2:20pm
 
@@ -201,7 +186,7 @@ Inter-individual variability in drug response is a key challenge in precision on
 
 ### across WES and WGS in rare diseases
 
-**Relevance Score:** 45.54%
+**Type:** 🎤 Talk | **Relevance Score:** 45.72%
 
 **⏰ Time:** 2:20pm – 2:25pm
 
@@ -217,7 +202,7 @@ As deep learning continues to advance clinical genetics, particularly for rare d
 
 ### personal epigenome resource
 
-**Relevance Score:** 44.12%
+**Type:** 🎤 Talk | **Relevance Score:** 44.61%
 
 **⏰ Time:** 8:30am – 8:45am
 
@@ -231,7 +216,7 @@ The ability to identify allele-specific (AS) events at both bulk and single-cell
 
 ### SingleBrain: A Meta-Analysis of Single-Nucleus eQTLs Linking Genetic Risk to
 
-**Relevance Score:** 51.88%
+**Type:** 🎤 Talk | **Relevance Score:** 51.67%
 
 **⏰ Time:** 9:15am – 9:30am
 
@@ -247,7 +232,7 @@ Introduction: Non-coding genetic variants identified by GWAS influence brain dis
 
 ### mechanisms of microglia dysfunction
 
-**Relevance Score:** 45.94%
+**Type:** 🎤 Talk | **Relevance Score:** 46.38%
 
 **⏰ Time:** 10:45am – 11:00am
 
@@ -261,7 +246,7 @@ The pathogenesis of complex traits like multiple sclerosis (MS) involves disrupt
 
 ### viral, non-nanoparticle delivery platform for CRISPR/dCas9-based gene
 
-**Relevance Score:** 44.02%
+**Type:** 🎤 Talk | **Relevance Score:** 45.07%
 
 **⏰ Time:** 11:30am – 11:45am
 
@@ -275,7 +260,7 @@ Epigenome editing using CRISPR/dCas9 offers a promising therapeutic avenue for n
 
 ### Comprehensive characterization of functional pleiotropy at the 5p15.33 multi-
 
-**Relevance Score:** 44.08%
+**Type:** 🎤 Talk | **Relevance Score:** 44.11%
 
 **⏰ Time:** 1:30pm – 1:45pm
 
@@ -289,7 +274,7 @@ Epigenome editing using CRISPR/dCas9 offers a promising therapeutic avenue for n
 
 ### 🔴 Genomic Rearrangements in Human Hematopoietic Stem Cells
 
-**Relevance Score:** 46.66%
+**Type:** 🎤 Talk | **Relevance Score:** 47.06%
 
 **⏰ Time:** 1:45pm – 2:00pm
 
@@ -305,7 +290,7 @@ CRISPR-Cas genome editing introduces a range of genomic alterations that must be
 
 ### 🔴 Deleterious 3’UTR Variants
 
-**Relevance Score:** 45.91%
+**Type:** 🎤 Talk | **Relevance Score:** 46.13%
 
 **⏰ Time:** 1:45pm – 2:00pm
 
@@ -321,7 +306,7 @@ MicroRNAs (miRNAs) are essential regulators of post-transcriptional gene express
 
 ### 🔴 Genetic control of regulatory dispersion across human and chimpanzee cell
 
-**Relevance Score:** 44.33%
+**Type:** 🎤 Talk | **Relevance Score:** 44.62%
 
 **⏰ Time:** 1:45pm – 2:00pm
 
@@ -337,7 +322,7 @@ Gene regulatory mutations are a powerful engine of phenotypic diversity across c
 
 ### 🔴 expansion disease loci using in vivo CRISPR–Cas9 genome editing
 
-**Relevance Score:** 44.07%
+**Type:** 🎤 Talk | **Relevance Score:** 44.49%
 
 **⏰ Time:** 1:45pm – 2:00pm
 
@@ -353,7 +338,7 @@ Somatic expansion of disease-causing repeats is a critical driver of disease pat
 
 ### Modulating gene expression in human cells via high-throughput prime editing of
 
-**Relevance Score:** 44.59%
+**Type:** 🎤 Talk | **Relevance Score:** 45.12%
 
 **⏰ Time:** 2:00pm – 2:15pm
 
@@ -367,7 +352,7 @@ Modulating human gene expression by editing regulatory regions of the genome aff
 
 ### 🔴 immune-related diseases
 
-**Relevance Score:** 47.06%
+**Type:** 🎤 Talk | **Relevance Score:** 47.37%
 
 **⏰ Time:** 2:15pm – 2:30pm
 
@@ -383,7 +368,7 @@ Background: Genetic variants associated with immune disease risk often act throu
 
 ### 🔴 Transcripts in the Human Genome
 
-**Relevance Score:** 43.99%
+**Type:** 🎤 Talk | **Relevance Score:** 44.07%
 
 **⏰ Time:** 2:15pm – 2:30pm
 
@@ -399,7 +384,7 @@ Endogenous retroviruses (ERVs), remnants of ancient retroviral integrations, com
 
 ### Disease from Large-Scale RNA-seq data
 
-**Relevance Score:** 45.39%
+**Type:** 🎤 Talk | **Relevance Score:** 45.26%
 
 **⏰ Time:** 5:18pm – 5:36pm
 
@@ -413,7 +398,7 @@ Current RNA-seq methods for quantifying isoform expression depend heavily on pre
 
 ### 🔴 Decoding gene expression in cellular and disease states with deep learning
 
-**Relevance Score:** 52.39%
+**Type:** 🎤 Talk | **Relevance Score:** 52.24%
 
 **⏰ Time:** 8:30am – 8:45am
 
@@ -429,7 +414,7 @@ Deep learning models that predict gene expression from DNA sequence have transfo
 
 ### 🔴 mapping of regulatory variants in long non-coding RNA
 
-**Relevance Score:** 49.29%
+**Type:** 🎤 Talk | **Relevance Score:** 49.68%
 
 **⏰ Time:** 8:30am – 8:45am
 
@@ -443,25 +428,9 @@ Functional interpretation of variants linked to disease in long noncoding RNAs r
 
 ---
 
-### 🔴 T cell-specific causative variants underlying immune-mediated inflammatory
-
-**Relevance Score:** 44.58%
-
-**⏰ Time:** 8:45am – 9:00am
-
-**👥 Authors:** Paige Elizabeth Bond, Jeniece Regan
-
-**📝 Abstract:**
-
-Immune-mediated inflammatory disorders (IMIDs) are characterized by an aberrant immune response against healthy cells, in part due to loss of T cell tolerance. IMIDs are common, affecting up to 5% of the Western population. A better understanding of underlying genetic loci is essential to accurately...
-
-⚠️ **CONFLICT:** 2 interesting talks at this time
-
----
-
 ### 🔴 specificity and activity
 
-**Relevance Score:** 44.46%
+**Type:** 🎤 Talk | **Relevance Score:** 45.22%
 
 **⏰ Time:** 8:45am – 9:00am
 
@@ -475,9 +444,25 @@ Base editing technologies allow for the precise and efficient installation of de
 
 ---
 
+### 🔴 T cell-specific causative variants underlying immune-mediated inflammatory
+
+**Type:** 🎤 Talk | **Relevance Score:** 44.92%
+
+**⏰ Time:** 8:45am – 9:00am
+
+**👥 Authors:** Paige Elizabeth Bond, Jeniece Regan
+
+**📝 Abstract:**
+
+Immune-mediated inflammatory disorders (IMIDs) are characterized by an aberrant immune response against healthy cells, in part due to loss of T cell tolerance. IMIDs are common, affecting up to 5% of the Western population. A better understanding of underlying genetic loci is essential to accurately...
+
+⚠️ **CONFLICT:** 2 interesting talks at this time
+
+---
+
 ### complex traits and disease
 
-**Relevance Score:** 44.20%
+**Type:** 🎤 Talk | **Relevance Score:** 44.37%
 
 **⏰ Time:** 9:00am – 9:15am
 
@@ -491,7 +476,7 @@ Long non-coding RNAs (lncRNAs) have been challenging to definitively link to spe
 
 ### 🔴 Regulatory Networks from Single-Cell Multi-Omics
 
-**Relevance Score:** 51.25%
+**Type:** 🎤 Talk | **Relevance Score:** 51.59%
 
 **⏰ Time:** 9:15am – 9:30am
 
@@ -507,7 +492,7 @@ Gene transcription is a fundamental process that governs cellular identity and f
 
 ### 🔴 Genetic Diseases Using a Semi-Automated Bioinformatics Pipeline
 
-**Relevance Score:** 43.96%
+**Type:** 🎤 Talk | **Relevance Score:** 44.50%
 
 **⏰ Time:** 9:15am – 9:30am
 
@@ -523,7 +508,7 @@ Over 7,000 rare diseases have been identified, many of which are severe, begin i
 
 ### 🔴 AlphaGenome: advancing regulatory variant effect prediction with a unified
 
-**Relevance Score:** 47.32%
+**Type:** 🎤 Talk | **Relevance Score:** 47.54%
 
 **⏰ Time:** 9:30am – 9:45am
 
@@ -539,7 +524,7 @@ Deep learning models that predict functional genomic measurements from DNA seque
 
 ### 🔴 Dosage-Time Task Learning
 
-**Relevance Score:** 47.04%
+**Type:** 🎤 Talk | **Relevance Score:** 46.67%
 
 **⏰ Time:** 9:30am – 9:45am
 
@@ -555,7 +540,7 @@ Background: Drug repurposing accelerates drug discovery by identifying new thera
 
 ### 🔴 returned to 23,840 adults and children
 
-**Relevance Score:** 48.48%
+**Type:** 🎤 Talk | **Relevance Score:** 48.54%
 
 **⏰ Time:** 9:45am – 10:00am
 
@@ -571,7 +556,7 @@ Incorporating genetic risk factors into disease screening is essential to advanc
 
 ### 🔴 cell models for AI driven drug discovery
 
-**Relevance Score:** 46.30%
+**Type:** 🎤 Talk | **Relevance Score:** 46.42%
 
 **⏰ Time:** 9:45am – 10:00am
 
@@ -585,11 +570,27 @@ High performance machine learning methods for drug discovery demand training dat
 
 ---
 
+## 📅 Tuesday, October 14
+
+### Integrative multi-omics analysis of spaceflight-induced physiological adaptations
+
+**Type:** 🎤 Talk | **Relevance Score:** 44.07%
+
+**⏰ Time:** 5:36pm – 5:54pm
+
+**👥 Authors:** JangKeun Kim, Eliah Overbey, Jeremy
+
+**📝 Abstract:**
+
+The recent expansion of commercial, private, and multinational space missions has highlighted the urgent need for precision aerospace medicine. To address this gap, we leveraged the Space Omics and Medical Atlas (SOMA) datasets from the Inspiration4, Polaris Dawn, and Ax-2 missions to define spacefl...
+
+---
+
 ## 📅 Wednesday, October 15
 
 ### and 3.4 million cells
 
-**Relevance Score:** 47.04%
+**Type:** 🎤 Talk | **Relevance Score:** 47.32%
 
 **⏰ Time:** 10:45am – 11:00am
 
@@ -603,7 +604,7 @@ Single-cell transcriptomics can identify disease driver genes and biomarkers wit
 
 ### 🔴 expression analysis and optimal design of single-cell CRISPR screens
 
-**Relevance Score:** 51.96%
+**Type:** 🎤 Talk | **Relevance Score:** 51.74%
 
 **⏰ Time:** 11:00am – 11:15am
 
@@ -619,7 +620,7 @@ Pooled single-cell CRISPR screens, such as Perturb-seq, link genetic perturbatio
 
 ### 🔴 Personalized Mapping of Allele-Specific Chromatin Accessibility at Single-Cell
 
-**Relevance Score:** 47.27%
+**Type:** 🎤 Talk | **Relevance Score:** 47.34%
 
 **⏰ Time:** 11:00am – 11:15am
 
@@ -635,7 +636,7 @@ Understanding how genetic variation shapes chromatin accessibility is central to
 
 ### 🔴 Complex Phenotypes through Integration of Perturb-seq and Phenotypic Data
 
-**Relevance Score:** 48.85%
+**Type:** 🎤 Talk | **Relevance Score:** 49.22%
 
 **⏰ Time:** 11:15am – 11:30am
 
@@ -651,7 +652,7 @@ Understanding how genetic variants affect complex traits through intermediate mo
 
 ### 🔴 brains with Alzheimer’s disease
 
-**Relevance Score:** 45.91%
+**Type:** 🎤 Talk | **Relevance Score:** 46.43%
 
 **⏰ Time:** 11:15am – 11:30am
 
@@ -667,7 +668,7 @@ RNA editing is a post-transcriptional modification comprising insertion, deletio
 
 ### Transformer-enhanced Hi-C Upscaling Unveils 3D Genome Architecture at Low
 
-**Relevance Score:** 45.18%
+**Type:** 🎤 Talk | **Relevance Score:** 44.97%
 
 **⏰ Time:** 11:30am – 11:45am
 
@@ -681,7 +682,7 @@ Accurate 3D maps of chromatin are crucial for understanding gene regulation and 
 
 ### Compartments With Spatial Transcriptomics
 
-**Relevance Score:** 45.02%
+**Type:** 🎤 Talk | **Relevance Score:** 45.08%
 
 **⏰ Time:** 1:30pm – 1:45pm
 
@@ -695,7 +696,7 @@ Background: Neurons are highly polarized cells with distinct distal compartments
 
 ### Genes for Lung Cancer
 
-**Relevance Score:** 47.17%
+**Type:** 🎤 Talk | **Relevance Score:** 47.50%
 
 **⏰ Time:** 1:45pm – 2:00pm
 
@@ -709,7 +710,7 @@ Background: Transcriptome-wide association studies (TWAS) have uncovered over 10
 
 ### 🔴 Hierarchies in Myeloid Cell Fate Decisions in Crohn's Disease
 
-**Relevance Score:** 48.04%
+**Type:** 🎤 Talk | **Relevance Score:** 48.45%
 
 **⏰ Time:** 2:00pm – 2:15pm
 
@@ -725,7 +726,7 @@ Background: Crohn's disease (CD) is a type of inflammatory bowel disease (IBD) c
 
 ### 🔴 Cue2: deep learning framework for structural variant discovery with long reads
 
-**Relevance Score:** 45.01%
+**Type:** 🎤 Talk | **Relevance Score:** 45.06%
 
 **⏰ Time:** 2:00pm – 2:15pm
 
@@ -741,7 +742,7 @@ Structural variants (SVs) are the greatest source of genetic diversity in the hu
 
 ### 🔴 Saturation mutagenesis of 37 human splicing factor genes using pooled prime
 
-**Relevance Score:** 44.27%
+**Type:** 🎤 Talk | **Relevance Score:** 44.57%
 
 **⏰ Time:** 2:00pm – 2:15pm
 
@@ -757,7 +758,7 @@ Multiplexed assays of variant effect (MAVEs) efficiently map genotypes to phenot
 
 ### 🔴 Gene regulation in T cells depends on the severity of atopic dermatitis
 
-**Relevance Score:** 47.32%
+**Type:** 🎤 Talk | **Relevance Score:** 47.63%
 
 **⏰ Time:** 2:15pm – 2:30pm
 
@@ -773,7 +774,7 @@ Atopic dermatitis (AD) is a complex skin disease with features of eczema, dry sk
 
 ### 🔴 Disease Genetic Scorecard Reveals Convergent Coding and Regulatory Variants
 
-**Relevance Score:** 46.08%
+**Type:** 🎤 Talk | **Relevance Score:** 46.44%
 
 **⏰ Time:** 2:15pm – 2:30pm
 
@@ -793,11 +794,13 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Friday, October 17 at 2:00pm – 2:05pm
 
-- **autoimmune disease risk** (Relevance: 49.81%)
+- 🎤 **autoimmune disease risk** (Relevance: 50.44%)
+  - Type: Talk
   - Location: TBD
   - Preview: GWAS has identified hundreds of variants associated with autoimmune diseases, most of which are non-...
 
-- **Expression in B Cells** (Relevance: 45.29%)
+- 🎤 **Expression in B Cells** (Relevance: 45.88%)
+  - Type: Talk
   - Location: TBD
   - Preview: GWAS has revealed the genetics of autoimmunity. While polygenic analyses emphasize T cells, they may...
 
@@ -805,11 +808,13 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Friday, October 17 at 2:00pm – 2:05pm
 
-- **autoimmune disease risk** (Relevance: 49.81%)
+- 🎤 **autoimmune disease risk** (Relevance: 50.44%)
+  - Type: Talk
   - Location: TBD
   - Preview: GWAS has identified hundreds of variants associated with autoimmune diseases, most of which are non-...
 
-- **Expression in B Cells** (Relevance: 45.29%)
+- 🎤 **Expression in B Cells** (Relevance: 45.88%)
+  - Type: Talk
   - Location: TBD
   - Preview: GWAS has revealed the genetics of autoimmunity. While polygenic analyses emphasize T cells, they may...
 
@@ -817,11 +822,13 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Friday, October 17 at 2:05pm – 2:10pm
 
-- **function and disease risk** (Relevance: 48.76%)
+- 🎤 **function and disease risk** (Relevance: 49.28%)
+  - Type: Talk
   - Location: TBD
   - Preview: Understanding how genetic variation regulates gene expression at the single-cell level is critical f...
 
-- **roles of alveolar cells in lung cancer etiology** (Relevance: 45.68%)
+- 🎤 **roles of alveolar cells in lung cancer etiology** (Relevance: 45.54%)
+  - Type: Talk
   - Location: TBD
   - Preview: Background: Single-cell expression quantitative trait loci (sc-eQTL) studies are instrumental in det...
 
@@ -829,11 +836,13 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Friday, October 17 at 2:05pm – 2:10pm
 
-- **function and disease risk** (Relevance: 48.76%)
+- 🎤 **function and disease risk** (Relevance: 49.28%)
+  - Type: Talk
   - Location: TBD
   - Preview: Understanding how genetic variation regulates gene expression at the single-cell level is critical f...
 
-- **roles of alveolar cells in lung cancer etiology** (Relevance: 45.68%)
+- 🎤 **roles of alveolar cells in lung cancer etiology** (Relevance: 45.54%)
+  - Type: Talk
   - Location: TBD
   - Preview: Background: Single-cell expression quantitative trait loci (sc-eQTL) studies are instrumental in det...
 
@@ -841,19 +850,23 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Thursday, October 16 at 1:45pm – 2:00pm
 
-- **Genomic Rearrangements in Human Hematopoietic Stem Cells** (Relevance: 46.66%)
+- 🎤 **Genomic Rearrangements in Human Hematopoietic Stem Cells** (Relevance: 47.06%)
+  - Type: Talk
   - Location: TBD
   - Preview: CRISPR-Cas genome editing introduces a range of genomic alterations that must be thoroughly characte...
 
-- **Deleterious 3’UTR Variants** (Relevance: 45.91%)
+- 🎤 **Deleterious 3’UTR Variants** (Relevance: 46.13%)
+  - Type: Talk
   - Location: TBD
   - Preview: MicroRNAs (miRNAs) are essential regulators of post-transcriptional gene expression, yet our underst...
 
-- **Genetic control of regulatory dispersion across human and chimpanzee cell** (Relevance: 44.33%)
+- 🎤 **Genetic control of regulatory dispersion across human and chimpanzee cell** (Relevance: 44.62%)
+  - Type: Talk
   - Location: TBD
   - Preview: Gene regulatory mutations are a powerful engine of phenotypic diversity across cell types, individua...
 
-- **expansion disease loci using in vivo CRISPR–Cas9 genome editing** (Relevance: 44.07%)
+- 🎤 **expansion disease loci using in vivo CRISPR–Cas9 genome editing** (Relevance: 44.49%)
+  - Type: Talk
   - Location: TBD
   - Preview: Somatic expansion of disease-causing repeats is a critical driver of disease pathogenesis in Hunting...
 
@@ -861,19 +874,23 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Thursday, October 16 at 1:45pm – 2:00pm
 
-- **Genomic Rearrangements in Human Hematopoietic Stem Cells** (Relevance: 46.66%)
+- 🎤 **Genomic Rearrangements in Human Hematopoietic Stem Cells** (Relevance: 47.06%)
+  - Type: Talk
   - Location: TBD
   - Preview: CRISPR-Cas genome editing introduces a range of genomic alterations that must be thoroughly characte...
 
-- **Deleterious 3’UTR Variants** (Relevance: 45.91%)
+- 🎤 **Deleterious 3’UTR Variants** (Relevance: 46.13%)
+  - Type: Talk
   - Location: TBD
   - Preview: MicroRNAs (miRNAs) are essential regulators of post-transcriptional gene expression, yet our underst...
 
-- **Genetic control of regulatory dispersion across human and chimpanzee cell** (Relevance: 44.33%)
+- 🎤 **Genetic control of regulatory dispersion across human and chimpanzee cell** (Relevance: 44.62%)
+  - Type: Talk
   - Location: TBD
   - Preview: Gene regulatory mutations are a powerful engine of phenotypic diversity across cell types, individua...
 
-- **expansion disease loci using in vivo CRISPR–Cas9 genome editing** (Relevance: 44.07%)
+- 🎤 **expansion disease loci using in vivo CRISPR–Cas9 genome editing** (Relevance: 44.49%)
+  - Type: Talk
   - Location: TBD
   - Preview: Somatic expansion of disease-causing repeats is a critical driver of disease pathogenesis in Hunting...
 
@@ -881,19 +898,23 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Thursday, October 16 at 1:45pm – 2:00pm
 
-- **Genomic Rearrangements in Human Hematopoietic Stem Cells** (Relevance: 46.66%)
+- 🎤 **Genomic Rearrangements in Human Hematopoietic Stem Cells** (Relevance: 47.06%)
+  - Type: Talk
   - Location: TBD
   - Preview: CRISPR-Cas genome editing introduces a range of genomic alterations that must be thoroughly characte...
 
-- **Deleterious 3’UTR Variants** (Relevance: 45.91%)
+- 🎤 **Deleterious 3’UTR Variants** (Relevance: 46.13%)
+  - Type: Talk
   - Location: TBD
   - Preview: MicroRNAs (miRNAs) are essential regulators of post-transcriptional gene expression, yet our underst...
 
-- **Genetic control of regulatory dispersion across human and chimpanzee cell** (Relevance: 44.33%)
+- 🎤 **Genetic control of regulatory dispersion across human and chimpanzee cell** (Relevance: 44.62%)
+  - Type: Talk
   - Location: TBD
   - Preview: Gene regulatory mutations are a powerful engine of phenotypic diversity across cell types, individua...
 
-- **expansion disease loci using in vivo CRISPR–Cas9 genome editing** (Relevance: 44.07%)
+- 🎤 **expansion disease loci using in vivo CRISPR–Cas9 genome editing** (Relevance: 44.49%)
+  - Type: Talk
   - Location: TBD
   - Preview: Somatic expansion of disease-causing repeats is a critical driver of disease pathogenesis in Hunting...
 
@@ -901,19 +922,23 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Thursday, October 16 at 1:45pm – 2:00pm
 
-- **Genomic Rearrangements in Human Hematopoietic Stem Cells** (Relevance: 46.66%)
+- 🎤 **Genomic Rearrangements in Human Hematopoietic Stem Cells** (Relevance: 47.06%)
+  - Type: Talk
   - Location: TBD
   - Preview: CRISPR-Cas genome editing introduces a range of genomic alterations that must be thoroughly characte...
 
-- **Deleterious 3’UTR Variants** (Relevance: 45.91%)
+- 🎤 **Deleterious 3’UTR Variants** (Relevance: 46.13%)
+  - Type: Talk
   - Location: TBD
   - Preview: MicroRNAs (miRNAs) are essential regulators of post-transcriptional gene expression, yet our underst...
 
-- **Genetic control of regulatory dispersion across human and chimpanzee cell** (Relevance: 44.33%)
+- 🎤 **Genetic control of regulatory dispersion across human and chimpanzee cell** (Relevance: 44.62%)
+  - Type: Talk
   - Location: TBD
   - Preview: Gene regulatory mutations are a powerful engine of phenotypic diversity across cell types, individua...
 
-- **expansion disease loci using in vivo CRISPR–Cas9 genome editing** (Relevance: 44.07%)
+- 🎤 **expansion disease loci using in vivo CRISPR–Cas9 genome editing** (Relevance: 44.49%)
+  - Type: Talk
   - Location: TBD
   - Preview: Somatic expansion of disease-causing repeats is a critical driver of disease pathogenesis in Hunting...
 
@@ -921,11 +946,13 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Thursday, October 16 at 2:15pm – 2:30pm
 
-- **immune-related diseases** (Relevance: 47.06%)
+- 🎤 **immune-related diseases** (Relevance: 47.37%)
+  - Type: Talk
   - Location: TBD
   - Preview: Background: Genetic variants associated with immune disease risk often act through complex regulator...
 
-- **Transcripts in the Human Genome** (Relevance: 43.99%)
+- 🎤 **Transcripts in the Human Genome** (Relevance: 44.07%)
+  - Type: Talk
   - Location: TBD
   - Preview: Endogenous retroviruses (ERVs), remnants of ancient retroviral integrations, comprise a substantial ...
 
@@ -933,11 +960,13 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Thursday, October 16 at 2:15pm – 2:30pm
 
-- **immune-related diseases** (Relevance: 47.06%)
+- 🎤 **immune-related diseases** (Relevance: 47.37%)
+  - Type: Talk
   - Location: TBD
   - Preview: Background: Genetic variants associated with immune disease risk often act through complex regulator...
 
-- **Transcripts in the Human Genome** (Relevance: 43.99%)
+- 🎤 **Transcripts in the Human Genome** (Relevance: 44.07%)
+  - Type: Talk
   - Location: TBD
   - Preview: Endogenous retroviruses (ERVs), remnants of ancient retroviral integrations, comprise a substantial ...
 
@@ -945,11 +974,13 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Thursday, October 16 at 8:30am – 8:45am
 
-- **Decoding gene expression in cellular and disease states with deep learning** (Relevance: 52.39%)
+- 🎤 **Decoding gene expression in cellular and disease states with deep learning** (Relevance: 52.24%)
+  - Type: Talk
   - Location: TBD
   - Preview: Deep learning models that predict gene expression from DNA sequence have transformed our understandi...
 
-- **mapping of regulatory variants in long non-coding RNA** (Relevance: 49.29%)
+- 🎤 **mapping of regulatory variants in long non-coding RNA** (Relevance: 49.68%)
+  - Type: Talk
   - Location: TBD
   - Preview: Functional interpretation of variants linked to disease in long noncoding RNAs remains challenging b...
 
@@ -957,11 +988,13 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Thursday, October 16 at 8:30am – 8:45am
 
-- **Decoding gene expression in cellular and disease states with deep learning** (Relevance: 52.39%)
+- 🎤 **Decoding gene expression in cellular and disease states with deep learning** (Relevance: 52.24%)
+  - Type: Talk
   - Location: TBD
   - Preview: Deep learning models that predict gene expression from DNA sequence have transformed our understandi...
 
-- **mapping of regulatory variants in long non-coding RNA** (Relevance: 49.29%)
+- 🎤 **mapping of regulatory variants in long non-coding RNA** (Relevance: 49.68%)
+  - Type: Talk
   - Location: TBD
   - Preview: Functional interpretation of variants linked to disease in long noncoding RNAs remains challenging b...
 
@@ -969,35 +1002,41 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Thursday, October 16 at 8:45am – 9:00am
 
-- **T cell-specific causative variants underlying immune-mediated inflammatory** (Relevance: 44.58%)
-  - Location: TBD
-  - Preview: Immune-mediated inflammatory disorders (IMIDs) are characterized by an aberrant immune response agai...
-
-- **specificity and activity** (Relevance: 44.46%)
+- 🎤 **specificity and activity** (Relevance: 45.22%)
+  - Type: Talk
   - Location: TBD
   - Preview: Base editing technologies allow for the precise and efficient installation of defined nucleotide sub...
+
+- 🎤 **T cell-specific causative variants underlying immune-mediated inflammatory** (Relevance: 44.92%)
+  - Type: Talk
+  - Location: TBD
+  - Preview: Immune-mediated inflammatory disorders (IMIDs) are characterized by an aberrant immune response agai...
 
 ---
 
 ### Thursday, October 16 at 8:45am – 9:00am
 
-- **T cell-specific causative variants underlying immune-mediated inflammatory** (Relevance: 44.58%)
-  - Location: TBD
-  - Preview: Immune-mediated inflammatory disorders (IMIDs) are characterized by an aberrant immune response agai...
-
-- **specificity and activity** (Relevance: 44.46%)
+- 🎤 **specificity and activity** (Relevance: 45.22%)
+  - Type: Talk
   - Location: TBD
   - Preview: Base editing technologies allow for the precise and efficient installation of defined nucleotide sub...
 
+- 🎤 **T cell-specific causative variants underlying immune-mediated inflammatory** (Relevance: 44.92%)
+  - Type: Talk
+  - Location: TBD
+  - Preview: Immune-mediated inflammatory disorders (IMIDs) are characterized by an aberrant immune response agai...
+
 ---
 
 ### Thursday, October 16 at 9:15am – 9:30am
 
-- **Regulatory Networks from Single-Cell Multi-Omics** (Relevance: 51.25%)
+- 🎤 **Regulatory Networks from Single-Cell Multi-Omics** (Relevance: 51.59%)
+  - Type: Talk
   - Location: TBD
   - Preview: Gene transcription is a fundamental process that governs cellular identity and function. It is tight...
 
-- **Genetic Diseases Using a Semi-Automated Bioinformatics Pipeline** (Relevance: 43.96%)
+- 🎤 **Genetic Diseases Using a Semi-Automated Bioinformatics Pipeline** (Relevance: 44.50%)
+  - Type: Talk
   - Location: TBD
   - Preview: Over 7,000 rare diseases have been identified, many of which are severe, begin in childhood, and lac...
 
@@ -1005,11 +1044,13 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Thursday, October 16 at 9:15am – 9:30am
 
-- **Regulatory Networks from Single-Cell Multi-Omics** (Relevance: 51.25%)
+- 🎤 **Regulatory Networks from Single-Cell Multi-Omics** (Relevance: 51.59%)
+  - Type: Talk
   - Location: TBD
   - Preview: Gene transcription is a fundamental process that governs cellular identity and function. It is tight...
 
-- **Genetic Diseases Using a Semi-Automated Bioinformatics Pipeline** (Relevance: 43.96%)
+- 🎤 **Genetic Diseases Using a Semi-Automated Bioinformatics Pipeline** (Relevance: 44.50%)
+  - Type: Talk
   - Location: TBD
   - Preview: Over 7,000 rare diseases have been identified, many of which are severe, begin in childhood, and lac...
 
@@ -1017,11 +1058,13 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Thursday, October 16 at 9:30am – 9:45am
 
-- **AlphaGenome: advancing regulatory variant effect prediction with a unified** (Relevance: 47.32%)
+- 🎤 **AlphaGenome: advancing regulatory variant effect prediction with a unified** (Relevance: 47.54%)
+  - Type: Talk
   - Location: TBD
   - Preview: Deep learning models that predict functional genomic measurements from DNA sequence are powerful too...
 
-- **Dosage-Time Task Learning** (Relevance: 47.04%)
+- 🎤 **Dosage-Time Task Learning** (Relevance: 46.67%)
+  - Type: Talk
   - Location: TBD
   - Preview: Background: Drug repurposing accelerates drug discovery by identifying new therapeutic uses for exis...
 
@@ -1029,11 +1072,13 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Thursday, October 16 at 9:30am – 9:45am
 
-- **AlphaGenome: advancing regulatory variant effect prediction with a unified** (Relevance: 47.32%)
+- 🎤 **AlphaGenome: advancing regulatory variant effect prediction with a unified** (Relevance: 47.54%)
+  - Type: Talk
   - Location: TBD
   - Preview: Deep learning models that predict functional genomic measurements from DNA sequence are powerful too...
 
-- **Dosage-Time Task Learning** (Relevance: 47.04%)
+- 🎤 **Dosage-Time Task Learning** (Relevance: 46.67%)
+  - Type: Talk
   - Location: TBD
   - Preview: Background: Drug repurposing accelerates drug discovery by identifying new therapeutic uses for exis...
 
@@ -1041,11 +1086,13 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Thursday, October 16 at 9:45am – 10:00am
 
-- **returned to 23,840 adults and children** (Relevance: 48.48%)
+- 🎤 **returned to 23,840 adults and children** (Relevance: 48.54%)
+  - Type: Talk
   - Location: TBD
   - Preview: Incorporating genetic risk factors into disease screening is essential to advance precision medicine...
 
-- **cell models for AI driven drug discovery** (Relevance: 46.30%)
+- 🎤 **cell models for AI driven drug discovery** (Relevance: 46.42%)
+  - Type: Talk
   - Location: TBD
   - Preview: High performance machine learning methods for drug discovery demand training data that capture trans...
 
@@ -1053,11 +1100,13 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Thursday, October 16 at 9:45am – 10:00am
 
-- **returned to 23,840 adults and children** (Relevance: 48.48%)
+- 🎤 **returned to 23,840 adults and children** (Relevance: 48.54%)
+  - Type: Talk
   - Location: TBD
   - Preview: Incorporating genetic risk factors into disease screening is essential to advance precision medicine...
 
-- **cell models for AI driven drug discovery** (Relevance: 46.30%)
+- 🎤 **cell models for AI driven drug discovery** (Relevance: 46.42%)
+  - Type: Talk
   - Location: TBD
   - Preview: High performance machine learning methods for drug discovery demand training data that capture trans...
 
@@ -1065,11 +1114,13 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Wednesday, October 15 at 11:00am – 11:15am
 
-- **expression analysis and optimal design of single-cell CRISPR screens** (Relevance: 51.96%)
+- 🎤 **expression analysis and optimal design of single-cell CRISPR screens** (Relevance: 51.74%)
+  - Type: Talk
   - Location: TBD
   - Preview: Pooled single-cell CRISPR screens, such as Perturb-seq, link genetic perturbations to transcriptomic...
 
-- **Personalized Mapping of Allele-Specific Chromatin Accessibility at Single-Cell** (Relevance: 47.27%)
+- 🎤 **Personalized Mapping of Allele-Specific Chromatin Accessibility at Single-Cell** (Relevance: 47.34%)
+  - Type: Talk
   - Location: TBD
   - Preview: Understanding how genetic variation shapes chromatin accessibility is central to uncovering the cis-...
 
@@ -1077,11 +1128,13 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Wednesday, October 15 at 11:00am – 11:15am
 
-- **expression analysis and optimal design of single-cell CRISPR screens** (Relevance: 51.96%)
+- 🎤 **expression analysis and optimal design of single-cell CRISPR screens** (Relevance: 51.74%)
+  - Type: Talk
   - Location: TBD
   - Preview: Pooled single-cell CRISPR screens, such as Perturb-seq, link genetic perturbations to transcriptomic...
 
-- **Personalized Mapping of Allele-Specific Chromatin Accessibility at Single-Cell** (Relevance: 47.27%)
+- 🎤 **Personalized Mapping of Allele-Specific Chromatin Accessibility at Single-Cell** (Relevance: 47.34%)
+  - Type: Talk
   - Location: TBD
   - Preview: Understanding how genetic variation shapes chromatin accessibility is central to uncovering the cis-...
 
@@ -1089,11 +1142,13 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Wednesday, October 15 at 11:15am – 11:30am
 
-- **Complex Phenotypes through Integration of Perturb-seq and Phenotypic Data** (Relevance: 48.85%)
+- 🎤 **Complex Phenotypes through Integration of Perturb-seq and Phenotypic Data** (Relevance: 49.22%)
+  - Type: Talk
   - Location: TBD
   - Preview: Understanding how genetic variants affect complex traits through intermediate molecular mechanisms r...
 
-- **brains with Alzheimer’s disease** (Relevance: 45.91%)
+- 🎤 **brains with Alzheimer’s disease** (Relevance: 46.43%)
+  - Type: Talk
   - Location: TBD
   - Preview: RNA editing is a post-transcriptional modification comprising insertion, deletion, and base substitu...
 
@@ -1101,11 +1156,13 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Wednesday, October 15 at 11:15am – 11:30am
 
-- **Complex Phenotypes through Integration of Perturb-seq and Phenotypic Data** (Relevance: 48.85%)
+- 🎤 **Complex Phenotypes through Integration of Perturb-seq and Phenotypic Data** (Relevance: 49.22%)
+  - Type: Talk
   - Location: TBD
   - Preview: Understanding how genetic variants affect complex traits through intermediate molecular mechanisms r...
 
-- **brains with Alzheimer’s disease** (Relevance: 45.91%)
+- 🎤 **brains with Alzheimer’s disease** (Relevance: 46.43%)
+  - Type: Talk
   - Location: TBD
   - Preview: RNA editing is a post-transcriptional modification comprising insertion, deletion, and base substitu...
 
@@ -1113,15 +1170,18 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Wednesday, October 15 at 2:00pm – 2:15pm
 
-- **Hierarchies in Myeloid Cell Fate Decisions in Crohn's Disease** (Relevance: 48.04%)
+- 🎤 **Hierarchies in Myeloid Cell Fate Decisions in Crohn's Disease** (Relevance: 48.45%)
+  - Type: Talk
   - Location: TBD
   - Preview: Background: Crohn's disease (CD) is a type of inflammatory bowel disease (IBD) characterized by chro...
 
-- **Cue2: deep learning framework for structural variant discovery with long reads** (Relevance: 45.01%)
+- 🎤 **Cue2: deep learning framework for structural variant discovery with long reads** (Relevance: 45.06%)
+  - Type: Talk
   - Location: TBD
   - Preview: Structural variants (SVs) are the greatest source of genetic diversity in the human genome and a key...
 
-- **Saturation mutagenesis of 37 human splicing factor genes using pooled prime** (Relevance: 44.27%)
+- 🎤 **Saturation mutagenesis of 37 human splicing factor genes using pooled prime** (Relevance: 44.57%)
+  - Type: Talk
   - Location: TBD
   - Preview: Multiplexed assays of variant effect (MAVEs) efficiently map genotypes to phenotypes by assessing th...
 
@@ -1129,15 +1189,18 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Wednesday, October 15 at 2:00pm – 2:15pm
 
-- **Hierarchies in Myeloid Cell Fate Decisions in Crohn's Disease** (Relevance: 48.04%)
+- 🎤 **Hierarchies in Myeloid Cell Fate Decisions in Crohn's Disease** (Relevance: 48.45%)
+  - Type: Talk
   - Location: TBD
   - Preview: Background: Crohn's disease (CD) is a type of inflammatory bowel disease (IBD) characterized by chro...
 
-- **Cue2: deep learning framework for structural variant discovery with long reads** (Relevance: 45.01%)
+- 🎤 **Cue2: deep learning framework for structural variant discovery with long reads** (Relevance: 45.06%)
+  - Type: Talk
   - Location: TBD
   - Preview: Structural variants (SVs) are the greatest source of genetic diversity in the human genome and a key...
 
-- **Saturation mutagenesis of 37 human splicing factor genes using pooled prime** (Relevance: 44.27%)
+- 🎤 **Saturation mutagenesis of 37 human splicing factor genes using pooled prime** (Relevance: 44.57%)
+  - Type: Talk
   - Location: TBD
   - Preview: Multiplexed assays of variant effect (MAVEs) efficiently map genotypes to phenotypes by assessing th...
 
@@ -1145,15 +1208,18 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Wednesday, October 15 at 2:00pm – 2:15pm
 
-- **Hierarchies in Myeloid Cell Fate Decisions in Crohn's Disease** (Relevance: 48.04%)
+- 🎤 **Hierarchies in Myeloid Cell Fate Decisions in Crohn's Disease** (Relevance: 48.45%)
+  - Type: Talk
   - Location: TBD
   - Preview: Background: Crohn's disease (CD) is a type of inflammatory bowel disease (IBD) characterized by chro...
 
-- **Cue2: deep learning framework for structural variant discovery with long reads** (Relevance: 45.01%)
+- 🎤 **Cue2: deep learning framework for structural variant discovery with long reads** (Relevance: 45.06%)
+  - Type: Talk
   - Location: TBD
   - Preview: Structural variants (SVs) are the greatest source of genetic diversity in the human genome and a key...
 
-- **Saturation mutagenesis of 37 human splicing factor genes using pooled prime** (Relevance: 44.27%)
+- 🎤 **Saturation mutagenesis of 37 human splicing factor genes using pooled prime** (Relevance: 44.57%)
+  - Type: Talk
   - Location: TBD
   - Preview: Multiplexed assays of variant effect (MAVEs) efficiently map genotypes to phenotypes by assessing th...
 
@@ -1161,11 +1227,13 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Wednesday, October 15 at 2:15pm – 2:30pm
 
-- **Gene regulation in T cells depends on the severity of atopic dermatitis** (Relevance: 47.32%)
+- 🎤 **Gene regulation in T cells depends on the severity of atopic dermatitis** (Relevance: 47.63%)
+  - Type: Talk
   - Location: TBD
   - Preview: Atopic dermatitis (AD) is a complex skin disease with features of eczema, dry skin, and itching and ...
 
-- **Disease Genetic Scorecard Reveals Convergent Coding and Regulatory Variants** (Relevance: 46.08%)
+- 🎤 **Disease Genetic Scorecard Reveals Convergent Coding and Regulatory Variants** (Relevance: 46.44%)
+  - Type: Talk
   - Location: TBD
   - Preview: Background: Genome-wide association studies (GWAS) have identified numerous DNA sequence variants as...
 
@@ -1173,11 +1241,13 @@ These time slots have multiple relevant talks. You'll need to choose which to at
 
 ### Wednesday, October 15 at 2:15pm – 2:30pm
 
-- **Gene regulation in T cells depends on the severity of atopic dermatitis** (Relevance: 47.32%)
+- 🎤 **Gene regulation in T cells depends on the severity of atopic dermatitis** (Relevance: 47.63%)
+  - Type: Talk
   - Location: TBD
   - Preview: Atopic dermatitis (AD) is a complex skin disease with features of eczema, dry skin, and itching and ...
 
-- **Disease Genetic Scorecard Reveals Convergent Coding and Regulatory Variants** (Relevance: 46.08%)
+- 🎤 **Disease Genetic Scorecard Reveals Convergent Coding and Regulatory Variants** (Relevance: 46.44%)
+  - Type: Talk
   - Location: TBD
   - Preview: Background: Genome-wide association studies (GWAS) have identified numerous DNA sequence variants as...
 

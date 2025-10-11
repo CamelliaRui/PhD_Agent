@@ -290,31 +290,45 @@ class ConferencePlanner:
         lines = section.strip().split('\n')
         if len(lines) < 3:
             return None
-        
+
         # First line should be the title
         title = lines[0].strip()
-        
+
         # Find the subsession time line
         day = None
         time = None
+        location = None
         authors_line = None
         abstract_text = None
-        
+        session_type = "talk"  # Default to talk
+
+        # Detect session type from the entire section text
+        section_lower = section.lower()
+        if any(keyword in section_lower for keyword in ['poster', 'poster session', 'poster presentation']):
+            session_type = "poster"
+        elif any(keyword in section_lower for keyword in ['platform', 'oral', 'invited', 'plenary']):
+            session_type = "talk"
+
         for i, line in enumerate(lines):
             line = line.strip()
-            
+
             # Extract timing information
             if 'Subsession Time:' in line:
                 day_time_match = re.search(r'(\w+, \w+ \d+) at ([\d:apm –-]+)', line)
                 day = day_time_match.group(1) if day_time_match else None
                 time = day_time_match.group(2) if day_time_match else None
                 continue
-            
+
+            # Extract location
+            if line.startswith('Location:'):
+                location = line[9:].strip()  # Remove "Location:" prefix
+                continue
+
             # Look for authors line
             if line.startswith('Authors:'):
                 authors_line = line[8:].strip()  # Remove "Authors:" prefix
                 continue
-            
+
             # Look for abstract
             if line.startswith('Abstract:'):
                 # Collect all remaining lines as abstract
@@ -355,34 +369,36 @@ class ConferencePlanner:
                     name = name_match.group(1).strip()
                     if name and len(name) > 2:  # Valid name
                         authors.append(name)
-        
+
         # Only create talk if we have essential components
         if title and abstract_text and len(abstract_text) > 50:
             return ConferenceTalk(
                 title=title,
                 abstract=abstract_text,
                 authors=authors,
-                session_type="talk",  # ASHG abstracts are typically talks
+                session_type=session_type,  # Detected from section text
                 day=day,
-                time=time
+                time=time,
+                location=location
             )
-        
+
         return None
-    
+
     def _parse_single_ashg_abstract(self, chunk: str) -> Optional[ConferenceTalk]:
         """Parse a single ASHG abstract chunk"""
         lines = chunk.strip().split('\n')
         if len(lines) < 3:
             return None
-        
+
         # Extract timing information (first line after split)
         time_line = lines[0].strip()
         day_time_match = re.search(r'(\w+, \w+ \d+) at ([\d:apm –-]+)', time_line)
         day = day_time_match.group(1) if day_time_match else None
         time = day_time_match.group(2) if day_time_match else None
-        
-        # Find title, authors, and abstract
+
+        # Find title, authors, location, and abstract
         title = None
+        location = None
         authors_line = None
         abstract_text = None
         
@@ -404,7 +420,13 @@ class ConferencePlanner:
                 authors_line = line[8:].strip()  # Remove "Authors:" prefix
                 i += 1
                 continue
-            
+
+            # Look for location
+            if line.startswith('Location:'):
+                location = line[9:].strip()  # Remove "Location:" prefix
+                i += 1
+                continue
+
             # Look for abstract
             if line.startswith('Abstract:'):
                 # Collect all remaining lines as abstract
@@ -484,9 +506,10 @@ class ConferencePlanner:
                 authors=authors,
                 session_type="talk",  # ASHG abstracts are typically talks
                 day=day,
-                time=time
+                time=time,
+                location=location
             )
-        
+
         return None
 
     def load_research_interests(self, interests_file: str) -> List[str]:
@@ -1110,9 +1133,12 @@ class ConferencePlanner:
 
             conflict_marker = "🔴 " if is_conflict else ""
 
+            # Session type badge
+            type_badge = "🎤 Talk" if talk.session_type == "talk" else "📋 Poster"
+
             # Talk entry
             md += f"### {conflict_marker}{talk.title}\n\n"
-            md += f"**Relevance Score:** {score:.2%}\n\n"
+            md += f"**Type:** {type_badge} | **Relevance Score:** {score:.2%}\n\n"
 
             if talk.time:
                 md += f"**⏰ Time:** {talk.time}\n\n"
@@ -1152,7 +1178,9 @@ class ConferencePlanner:
                 md += f"### {day} at {time}\n\n"
 
                 for talk, score in sorted(conflict_talks, key=lambda x: -x[1]):
-                    md += f"- **{talk.title}** (Relevance: {score:.2%})\n"
+                    type_emoji = "🎤" if talk.session_type == "talk" else "📋"
+                    md += f"- {type_emoji} **{talk.title}** (Relevance: {score:.2%})\n"
+                    md += f"  - Type: {'Talk' if talk.session_type == 'talk' else 'Poster'}\n"
                     md += f"  - Location: {talk.location or 'TBD'}\n"
                     md += f"  - Preview: {talk.abstract[:100]}...\n\n"
 
