@@ -26,6 +26,7 @@ from slack_mcp_integration import SlackMCPIntegration
 from zotero_mcp_integration import ZoteroMCPIntegration
 from slack_paper_monitor import SlackPaperMonitor
 from deepwiki_mcp_integration import DeepWikiMCPIntegration
+from conference_planner import ConferencePlanner
 
 # Load environment variables
 load_dotenv()
@@ -406,6 +407,140 @@ class PhdAgent:
             logger.error(f"Error searching codebase: {e}")
             return [{"error": str(e)}]
 
+    def update_research_interests(self, output_file: str = "research_interests.md") -> Dict[str, Any]:
+        """
+        Interactively prompt user for research interests and save to file
+
+        Args:
+            output_file: Path to save research interests
+
+        Returns:
+            Dict with status and file path
+        """
+        try:
+            from conference_planner import ConferencePlanner
+            from datetime import datetime
+
+            # Create temporary planner to use its prompt method
+            planner = ConferencePlanner(
+                conference_name="temp",
+                conference_dir="."
+            )
+
+            # Prompt for interests (will check existing file)
+            interests = planner.prompt_research_interests(interests_file=output_file)
+
+            if not interests:
+                return {"error": "No interests captured"}
+
+            # Save to file
+            planner.save_research_interests(output_file)
+
+            return {
+                "status": "success",
+                "interests": interests,
+                "file": output_file,
+                "count": len(interests)
+            }
+
+        except Exception as e:
+            logger.error(f"Error updating research interests: {e}")
+            return {"error": str(e)}
+
+    async def plan_conference_schedule(
+        self,
+        conference_name: str,
+        pdf_path: str,
+        interests_file: Optional[str] = None,
+        top_k: int = 50,
+        min_relevance: float = 0.3
+    ) -> Dict[str, Any]:
+        """
+        Plan conference schedule based on research interests
+
+        Args:
+            conference_name: Name of conference (e.g., "ASHG2025")
+            pdf_path: Path to conference abstracts PDF
+            interests_file: Path to research_interests.md (optional, will prompt if not provided)
+            top_k: Number of relevant talks to include
+            min_relevance: Minimum relevance score threshold
+
+        Returns:
+            Dict with schedule info and file paths
+        """
+        try:
+            from pathlib import Path
+
+            # Determine conference directory
+            conference_dir = Path(pdf_path).parent
+
+            # Initialize planner
+            planner = ConferencePlanner(
+                conference_name=conference_name,
+                conference_dir=str(conference_dir)
+            )
+
+            # Parse PDF
+            print(f"📄 Parsing conference PDF...")
+            talks = planner.parse_conference_pdf(pdf_path)
+
+            if not talks:
+                return {"error": "No talks found in PDF. PDF format may need customization."}
+
+            print(f"✅ Found {len(talks)} talks/posters")
+
+            # Load or prompt for research interests
+            if interests_file and Path(interests_file).exists():
+                print(f"📚 Loading research interests from {interests_file}...")
+                planner.load_research_interests(interests_file)
+            else:
+                planner.prompt_research_interests()
+
+                # Save interests
+                if not interests_file:
+                    interests_file = str(Path.cwd() / "research_interests.md")
+                planner.save_research_interests(interests_file)
+
+            # Index talks in ChromaDB
+            print(f"🔍 Indexing talks with RAG...")
+            planner.index_talks()
+
+            # Find relevant talks
+            print(f"🎯 Finding relevant talks (top {top_k}, min relevance: {min_relevance})...")
+            relevant_talks = planner.find_relevant_talks(
+                top_k=top_k,
+                min_relevance_score=min_relevance
+            )
+
+            if not relevant_talks:
+                return {
+                    "error": "No relevant talks found. Try lowering min_relevance threshold.",
+                    "total_talks": len(talks)
+                }
+
+            # Generate schedule
+            schedule_file = str(conference_dir / f"{conference_name.lower()}_schedule.md")
+            print(f"📅 Generating personalized schedule...")
+            planner.generate_schedule_markdown(relevant_talks, schedule_file)
+
+            # Detect conflicts
+            conflicts = planner.detect_conflicts(relevant_talks)
+
+            return {
+                "status": "success",
+                "conference": conference_name,
+                "total_talks": len(talks),
+                "relevant_talks": len(relevant_talks),
+                "conflicts": len(conflicts),
+                "schedule_file": schedule_file,
+                "interests_file": interests_file,
+                "relevance_threshold": min_relevance
+            }
+
+        except Exception as e:
+            logger.error(f"Error planning conference schedule: {e}")
+            return {"error": str(e)}
+
     async def interactive_session(self):
         """Start an interactive session with the PhD Agent"""
         print("🎓 PhD Agent initialized! How can I help you today?")
@@ -422,8 +557,10 @@ class PhdAgent:
         print("10. 'deepwiki ask [repo] [question]' - Ask about an indexed codebase")
         print("11. 'deepwiki search [repo] [query]' - Search within indexed codebase")
         print("12. 'deepwiki list' - List all indexed repositories")
-        print("13. 'chat [message]' - General discussion")
-        print("14. 'quit' - Exit")
+        print("13. 'interests update' - Update your research interests interactively")
+        print("14. 'conference plan [name]' - Plan/regenerate personalized conference schedule")
+        print("15. 'chat [message]' - General discussion")
+        print("16. 'quit' - Exit")
         
         while True:
             try:
@@ -627,6 +764,108 @@ class PhdAgent:
                             print(f"   DeepWiki: {repo_info['deepwiki_url']}")
                     else:
                         print("No repositories indexed yet. Use 'deepwiki index <github_url>' to start.")
+
+                elif user_input == 'interests update' or user_input.startswith('interests update'):
+                    print("\n🎯 Let's update your research interests!\n")
+                    result = self.update_research_interests()
+
+                    if result.get('status') == 'success':
+                        print(f"\n✅ Successfully saved {result['count']} research interests!")
+                        print(f"📄 File: {result['file']}\n")
+                        print("📋 Your interests:")
+                        for i, interest in enumerate(result['interests'], 1):
+                            print(f"  {i}. {interest}")
+                        print("\n💡 Next step:")
+                        print("   Type: conference plan ASHG2025")
+                        print("   (This will regenerate your schedule with updated interests)")
+                    else:
+                        print(f"❌ Error: {result.get('error', 'Unknown error')}")
+
+                elif user_input.startswith('conference plan') or user_input == 'conference regenerate':
+                    from pathlib import Path
+                    conference_base = Path.cwd() / "conference"
+
+                    # Parse command
+                    parts = user_input.split(' ', 2)
+                    conference_name = None
+
+                    if len(parts) >= 3:
+                        conference_name = parts[2].strip()
+                    else:
+                        # Auto-detect conference
+                        if not conference_base.exists():
+                            print(f"❌ Conference directory not found: {conference_base}")
+                            print("   Please ensure conference materials are in ./conference/[NAME]/")
+                            continue
+
+                        # List available conferences
+                        conferences = [d.name for d in conference_base.iterdir() if d.is_dir()]
+
+                        if not conferences:
+                            print("❌ No conferences found in ./conference/")
+                            continue
+                        elif len(conferences) == 1:
+                            conference_name = conferences[0]
+                            print(f"📍 Auto-detected conference: {conference_name}")
+                        else:
+                            print("\n📋 Available conferences:")
+                            for i, conf in enumerate(conferences, 1):
+                                print(f"  {i}. {conf}")
+                            print("\n❓ Usage: conference plan <conference_name>")
+                            print(f"   Example: conference plan {conferences[0]}")
+                            continue
+
+                    # Validate conference directory
+                    if not conference_base.exists():
+                        print(f"❌ Conference directory not found: {conference_base}")
+                        print("   Please ensure conference materials are in ./conference/[NAME]/")
+                        continue
+
+                    conference_dir = conference_base / conference_name
+                    if not conference_dir.exists():
+                        print(f"❌ Conference directory not found: {conference_dir}")
+                        print(f"   Available conferences:")
+                        for d in conference_base.iterdir():
+                            if d.is_dir():
+                                print(f"     - {d.name}")
+                        continue
+
+                    # Find PDF file
+                    pdf_files = list(conference_dir.glob("*.pdf"))
+                    if not pdf_files:
+                        print(f"❌ No PDF files found in {conference_dir}")
+                        continue
+
+                    pdf_path = str(pdf_files[0])
+                    print(f"\n🎉 Planning conference schedule for {conference_name}")
+                    print(f"   PDF: {Path(pdf_path).name}")
+                    print(f"   Location: {conference_dir}")
+                    print()
+
+                    result = await self.plan_conference_schedule(
+                        conference_name=conference_name,
+                        pdf_path=pdf_path
+                    )
+
+                    if result.get('status') == 'success':
+                        print(f"\n{'='*60}")
+                        print(f"🎊 CONFERENCE SCHEDULE COMPLETE!")
+                        print(f"{'='*60}")
+                        print(f"  Conference: {result['conference']}")
+                        print(f"  Total talks in PDF: {result['total_talks']}")
+                        print(f"  Relevant to your interests: {result['relevant_talks']}")
+                        print(f"  Scheduling conflicts: {result['conflicts']}")
+                        print(f"\n📄 Schedule saved to:")
+                        print(f"  {result['schedule_file']}")
+                        print(f"\n📚 Research interests used:")
+                        print(f"  {result['interests_file']}")
+                        print(f"\n💡 Next steps:")
+                        print(f"  1. Review your schedule: {result['schedule_file']}")
+                        print(f"  2. Resolve conflicts by choosing which talks to attend")
+                        print(f"  3. Add notes in the feedback section")
+                        print(f"{'='*60}\n")
+                    else:
+                        print(f"❌ Error: {result.get('error', 'Unknown error')}")
 
                 elif user_input.startswith('chat '):
                     message = user_input[5:]
