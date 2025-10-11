@@ -683,14 +683,23 @@ class ConferencePlanner:
         thesis_response = input("\nDo you want to add your thesis/dissertation? (y/n): ").strip().lower()
 
         if thesis_response == 'y':
-            thesis_path_input = input("Enter path to thesis PDF (or 'skip'): ").strip()
+            thesis_path_input = input("Enter path to thesis PDF (or drag file here): ").strip()
 
             if thesis_path_input and thesis_path_input.lower() != 'skip':
                 from pathlib import Path
+                import codecs
 
-                # Strip quotes if present (handles both single and double quotes)
+                # Clean up path (handles drag-and-drop with escape characters)
+                # Strip quotes (single and double)
                 thesis_path_input = thesis_path_input.strip('\'"')
 
+                # Decode escape sequences (e.g., \' becomes ')
+                try:
+                    thesis_path_input = codecs.decode(thesis_path_input, 'unicode_escape')
+                except:
+                    pass  # If decode fails, use as-is
+
+                # Expand ~ and resolve to absolute path
                 thesis_path = Path(thesis_path_input).expanduser().resolve()
 
                 if thesis_path.exists() and thesis_path.suffix.lower() == '.pdf':
