@@ -107,6 +107,8 @@ class ConferencePlanner:
         self.talks: List[ConferenceTalk] = []
         self.research_interests: List[str] = []
         self.exclusion_topics: List[str] = []  # Topics to filter out
+        self.thesis_path: Optional[str] = None  # Path to unpublished thesis
+        self.thesis_text: Optional[str] = None  # Cached thesis text
 
     def extract_pdf_text(self, pdf_path: str) -> str:
         """Extract text from PDF"""
@@ -496,6 +498,7 @@ class ConferencePlanner:
             # Extract sections
             interests = []
             exclusions = []
+            thesis_path = None
             current_section = None
 
             for line in content.split('\n'):
@@ -507,6 +510,9 @@ class ConferencePlanner:
                     continue
                 elif line_stripped.startswith('## Topics to Exclude'):
                     current_section = 'exclusions'
+                    continue
+                elif line_stripped.startswith('## Unpublished Work'):
+                    current_section = 'thesis'
                     continue
                 elif line_stripped.startswith('#'):
                     current_section = None
@@ -520,10 +526,14 @@ class ConferencePlanner:
                             interests.append(item)
                         elif current_section == 'exclusions':
                             exclusions.append(item)
+                        elif current_section == 'thesis' and item.startswith('Path:'):
+                            # Extract path from "Path: `path/to/file`"
+                            thesis_path = item.replace('Path:', '').strip('` ')
 
             self.research_interests = interests
             self.exclusion_topics = exclusions
-            logger.info(f"Loaded {len(interests)} interests and {len(exclusions)} exclusions")
+            self.thesis_path = thesis_path
+            logger.info(f"Loaded {len(interests)} interests, {len(exclusions)} exclusions, thesis: {thesis_path is not None}")
             return interests
 
         except FileNotFoundError:
@@ -647,10 +657,48 @@ class ConferencePlanner:
         else:
             print(f"\n⏭️  No exclusions set (will show all relevant talks)\n")
 
+        # Ask about thesis/dissertation (advanced feature)
+        print("\n" + "="*60)
+        print("📄 UNPUBLISHED WORK (Optional - Advanced)")
+        print("="*60)
+        print("\n💡 Upload your thesis/dissertation for BEST matching:")
+        print("  - Uses your actual research content for semantic matching")
+        print("  - Stored locally (never uploaded anywhere)")
+        print("  - Finds talks most relevant to YOUR specific work")
+        print("  - More accurate than keyword matching")
+        print("\n⚠️  Only provide drafts/unpublished work you're comfortable storing locally")
+        print("-"*60)
+
+        thesis_response = input("\nDo you want to add your thesis/dissertation? (y/n): ").strip().lower()
+
+        if thesis_response == 'y':
+            thesis_path_input = input("Enter path to thesis PDF (or 'skip'): ").strip()
+
+            if thesis_path_input and thesis_path_input.lower() != 'skip':
+                from pathlib import Path
+                thesis_path = Path(thesis_path_input).expanduser()
+
+                if thesis_path.exists() and thesis_path.suffix.lower() == '.pdf':
+                    self.thesis_path = str(thesis_path)
+                    print(f"  ✓ Thesis added: {thesis_path.name}")
+                    print(f"  📍 Will use for enhanced matching")
+                else:
+                    print(f"  ⚠️  File not found or not a PDF, skipping")
+                    self.thesis_path = None
+            else:
+                self.thesis_path = None
+        else:
+            self.thesis_path = None
+
+        if self.thesis_path:
+            print(f"\n✅ Thesis added for enhanced RAG matching!\n")
+        else:
+            print(f"\n⏭️  No thesis added (will use interests only)\n")
+
         return interests
 
     def save_research_interests(self, output_file: str):
-        """Save research interests and exclusion topics to markdown file"""
+        """Save research interests, exclusion topics, and thesis info to markdown file"""
         if not self.research_interests:
             logger.warning("No research interests to save")
             return
@@ -669,11 +717,64 @@ class ConferencePlanner:
             for exclusion in self.exclusion_topics:
                 content += f"- {exclusion}\n"
 
+        # Add thesis info if provided
+        if self.thesis_path:
+            content += "\n## Unpublished Work (Private)\n\n"
+            content += f"*Thesis/dissertation stored locally for enhanced matching:*\n\n"
+            content += f"- Path: `{self.thesis_path}`\n"
+
         with open(output_file, 'w') as f:
             f.write(content)
 
         logger.info(f"Saved research interests to {output_file}")
         print(f"💾 Research interests saved to: {output_file}")
+
+    def load_thesis_text(self) -> Optional[str]:
+        """
+        Load and extract text from thesis PDF
+        Caches the result to avoid repeated extraction
+
+        Returns:
+            Thesis text or None if not available
+        """
+        if not self.thesis_path:
+            return None
+
+        # Return cached text if available
+        if self.thesis_text:
+            return self.thesis_text
+
+        try:
+            from pathlib import Path
+
+            thesis_file = Path(self.thesis_path)
+            if not thesis_file.exists():
+                logger.warning(f"Thesis file not found: {self.thesis_path}")
+                return None
+
+            logger.info(f"Loading thesis from: {self.thesis_path}")
+            print(f"📖 Loading thesis: {thesis_file.name}...")
+
+            # Extract text from PDF
+            thesis_text = self.extract_pdf_text(str(thesis_file))
+
+            if thesis_text:
+                # Take first 10000 words to avoid overloading (typically intro + methods + results)
+                words = thesis_text.split()[:10000]
+                thesis_text = ' '.join(words)
+
+                self.thesis_text = thesis_text
+                logger.info(f"Loaded {len(thesis_text)} characters from thesis")
+                print(f"✅ Thesis loaded ({len(words)} words)")
+                return thesis_text
+            else:
+                logger.warning("Could not extract text from thesis")
+                return None
+
+        except Exception as e:
+            logger.error(f"Error loading thesis: {e}")
+            print(f"⚠️  Could not load thesis: {e}")
+            return None
 
     def index_talks(self):
         """Index all talks in ChromaDB for RAG"""
@@ -846,8 +947,16 @@ class ConferencePlanner:
         if not self.research_interests:
             raise ValueError("No research interests defined.")
 
-        # Combine all research interests into query
+        # Combine research interests into query
         query_text = " ".join(self.research_interests)
+
+        # Add thesis content if available (weighted heavily)
+        thesis_text = self.load_thesis_text()
+        if thesis_text:
+            logger.info("Using thesis content for enhanced matching")
+            print(f"🎯 Using thesis content for precise matching...")
+            # Weight thesis content more heavily by repeating it
+            query_text = f"{thesis_text} {thesis_text} {query_text}"
 
         # Generate query embedding
         query_embedding = self.embedder.encode(query_text)
