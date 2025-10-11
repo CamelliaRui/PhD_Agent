@@ -106,6 +106,7 @@ class ConferencePlanner:
 
         self.talks: List[ConferenceTalk] = []
         self.research_interests: List[str] = []
+        self.exclusion_topics: List[str] = []  # Topics to filter out
 
     def extract_pdf_text(self, pdf_path: str) -> str:
         """Extract text from PDF"""
@@ -487,23 +488,42 @@ class ConferencePlanner:
         return None
 
     def load_research_interests(self, interests_file: str) -> List[str]:
-        """Load research interests from markdown file"""
+        """Load research interests and exclusion topics from markdown file"""
         try:
             with open(interests_file, 'r') as f:
                 content = f.read()
 
-            # Extract bullet points or lines as interests
+            # Extract sections
             interests = []
+            exclusions = []
+            current_section = None
+
             for line in content.split('\n'):
-                line = line.strip()
-                if line and not line.startswith('#'):
-                    # Remove markdown list markers
-                    line = re.sub(r'^[-*+]\s+', '', line)
-                    if line:
-                        interests.append(line)
+                line_stripped = line.strip()
+
+                # Detect sections
+                if line_stripped.startswith('## My Research Focus'):
+                    current_section = 'interests'
+                    continue
+                elif line_stripped.startswith('## Topics to Exclude'):
+                    current_section = 'exclusions'
+                    continue
+                elif line_stripped.startswith('#'):
+                    current_section = None
+                    continue
+
+                # Extract bullet points
+                if line_stripped and line_stripped.startswith('-'):
+                    item = re.sub(r'^[-*+]\s+', '', line_stripped)
+                    if item and not item.startswith('*'):  # Skip markdown emphasis
+                        if current_section == 'interests':
+                            interests.append(item)
+                        elif current_section == 'exclusions':
+                            exclusions.append(item)
 
             self.research_interests = interests
-            logger.info(f"Loaded {len(interests)} research interests")
+            self.exclusion_topics = exclusions
+            logger.info(f"Loaded {len(interests)} interests and {len(exclusions)} exclusions")
             return interests
 
         except FileNotFoundError:
@@ -597,10 +617,40 @@ class ConferencePlanner:
         self.research_interests = interests
         print(f"\n✅ Total: {len(interests)} research interests!\n")
 
+        # Now ask for exclusion topics
+        print("\n" + "="*60)
+        print("🚫 EXCLUSION TOPICS (Optional)")
+        print("="*60)
+        print("\n💡 To improve filtering, specify topics you want to AVOID:")
+        print("  For computational/statistical genetics, you might exclude:")
+        print("  - Pure wet-lab protocols and techniques")
+        print("  - Clinical case studies without methods")
+        print("  - Traditional genetics without computational aspects")
+        print("  - Purely experimental molecular biology")
+        print("\nEnter exclusion topics one per line. Type 'done' or 'skip' to finish.")
+        print("-"*60 + "\n")
+
+        exclusions = []
+        while True:
+            exclusion = input(f"Exclude #{len(exclusions) + 1} (or 'done'/'skip'): ").strip()
+
+            if exclusion.lower() in ['done', 'skip', '']:
+                break
+
+            if exclusion:
+                exclusions.append(exclusion)
+                print(f"  ✓ Will exclude: {exclusion}")
+
+        self.exclusion_topics = exclusions
+        if exclusions:
+            print(f"\n✅ Will filter out {len(exclusions)} exclusion topics!\n")
+        else:
+            print(f"\n⏭️  No exclusions set (will show all relevant talks)\n")
+
         return interests
 
     def save_research_interests(self, output_file: str):
-        """Save research interests to markdown file"""
+        """Save research interests and exclusion topics to markdown file"""
         if not self.research_interests:
             logger.warning("No research interests to save")
             return
@@ -611,6 +661,13 @@ class ConferencePlanner:
 
         for interest in self.research_interests:
             content += f"- {interest}\n"
+
+        # Add exclusion topics if any
+        if self.exclusion_topics:
+            content += "\n## Topics to Exclude\n\n"
+            content += "*These topics will be filtered out from recommendations:*\n\n"
+            for exclusion in self.exclusion_topics:
+                content += f"- {exclusion}\n"
 
         with open(output_file, 'w') as f:
             f.write(content)
@@ -688,6 +745,91 @@ class ConferencePlanner:
 
         logger.info(f"✅ Indexed {len(documents)} talks in ChromaDB")
 
+    def should_exclude_talk(self, talk: ConferenceTalk) -> bool:
+        """
+        Determine if a talk should be excluded based on exclusion topics
+
+        Args:
+            talk: The ConferenceTalk to evaluate
+
+        Returns:
+            True if talk should be excluded, False otherwise
+        """
+        if not self.exclusion_topics:
+            return False
+
+        # Combine title and abstract for analysis
+        text = f"{talk.title} {talk.abstract}".lower()
+
+        # Define computational/statistical indicators
+        computational_indicators = [
+            'computational', 'statistical', 'algorithm', 'machine learning', 'deep learning',
+            'model', 'modeling', 'prediction', 'bioinformatics', 'simulation', 'software',
+            'bayesian', 'regression', 'neural network', 'random forest', 'clustering',
+            'dimensionality reduction', 'feature selection', 'cross-validation',
+            'likelihood', 'inference', 'estimation', 'pipeline', 'workflow', 'framework',
+            'database', 'tool', 'method development', 'novel method', 'approach'
+        ]
+
+        # Define wet-lab/clinical indicators (things to potentially exclude)
+        wetlab_indicators = [
+            'pipetting', 'western blot', 'immunostaining', 'cell culture',
+            'gel electrophoresis', 'cloning', 'transfection', 'microscopy',
+            'staining', 'histology', 'immunohistochemistry', 'pcr protocol',
+            'purification', 'extraction protocol', 'laboratory technique'
+        ]
+
+        clinical_indicators = [
+            'case report', 'case series', 'clinical trial enrollment',
+            'patient recruitment', 'clinical management', 'treatment protocol',
+            'surgical procedure', 'diagnostic criteria', 'clinical presentation'
+        ]
+
+        # Count indicators
+        comp_count = sum(1 for indicator in computational_indicators if indicator in text)
+        wetlab_count = sum(1 for indicator in wetlab_indicators if indicator in text)
+        clinical_count = sum(1 for indicator in clinical_indicators if indicator in text)
+
+        # Check exclusion topics against text
+        exclusion_match_count = 0
+        for exclusion_topic in self.exclusion_topics:
+            exclusion_lower = exclusion_topic.lower()
+
+            # Extract keywords from exclusion topic
+            exclusion_keywords = exclusion_lower.split()
+
+            # Check if multiple keywords from exclusion appear
+            matches = sum(1 for keyword in exclusion_keywords if len(keyword) > 3 and keyword in text)
+
+            if matches >= 2 or exclusion_lower in text:
+                exclusion_match_count += 1
+
+        # Exclusion logic: Exclude if:
+        # 1. Strong exclusion match AND no computational signals
+        # 2. High wet-lab indicators AND low computational indicators
+        # 3. Clinical without methods content
+
+        if exclusion_match_count >= 2 and comp_count == 0:
+            return True
+
+        if wetlab_count >= 3 and comp_count <= 1:
+            return True
+
+        if clinical_count >= 2 and comp_count == 0:
+            return True
+
+        # Check for specific exclusion phrases
+        pure_wetlab_phrases = [
+            'experimental protocol', 'laboratory protocol', 'wet lab',
+            'bench protocol', 'pipetting technique'
+        ]
+
+        for phrase in pure_wetlab_phrases:
+            if phrase in text and comp_count == 0:
+                return True
+
+        return False
+
     def find_relevant_talks(
         self,
         top_k: int = 50,
@@ -710,14 +852,17 @@ class ConferencePlanner:
         # Generate query embedding
         query_embedding = self.embedder.encode(query_text)
 
-        # Query ChromaDB
+        # Query ChromaDB - fetch more since we'll filter some out
+        fetch_count = min(top_k * 3, len(self.talks)) if self.exclusion_topics else min(top_k, len(self.talks))
+
         results = self.collection.query(
             query_embeddings=[query_embedding.tolist()],
-            n_results=min(top_k, len(self.talks))
+            n_results=fetch_count
         )
 
         # Parse results
         relevant_talks = []
+        excluded_count = 0
 
         for i, (metadata, distance) in enumerate(
             zip(results['metadatas'][0], results['distances'][0])
@@ -734,9 +879,22 @@ class ConferencePlanner:
                         a.strip() for a in metadata_copy['authors'].split(',') if a.strip()
                     ]
                 talk = ConferenceTalk(**metadata_copy)
-                relevant_talks.append((talk, similarity))
 
-        logger.info(f"Found {len(relevant_talks)} relevant talks (threshold: {min_relevance_score})")
+                # Apply exclusion filter
+                if not self.should_exclude_talk(talk):
+                    relevant_talks.append((talk, similarity))
+                    if len(relevant_talks) >= top_k:
+                        break
+                else:
+                    excluded_count += 1
+                    logger.debug(f"Excluded talk: {talk.title}")
+
+        if excluded_count > 0:
+            logger.info(f"Found {len(relevant_talks)} relevant talks after filtering out {excluded_count} excluded topics")
+            print(f"🚫 Filtered out {excluded_count} talks matching exclusion criteria")
+        else:
+            logger.info(f"Found {len(relevant_talks)} relevant talks (threshold: {min_relevance_score})")
+
         return relevant_talks
 
     def detect_conflicts(
