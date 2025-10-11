@@ -687,14 +687,19 @@ class ConferencePlanner:
 
             if thesis_path_input and thesis_path_input.lower() != 'skip':
                 from pathlib import Path
-                thesis_path = Path(thesis_path_input).expanduser()
+
+                # Strip quotes if present (handles both single and double quotes)
+                thesis_path_input = thesis_path_input.strip('\'"')
+
+                thesis_path = Path(thesis_path_input).expanduser().resolve()
 
                 if thesis_path.exists() and thesis_path.suffix.lower() == '.pdf':
                     self.thesis_path = str(thesis_path)
                     print(f"  ✓ Thesis added: {thesis_path.name}")
                     print(f"  📍 Will use for enhanced matching")
                 else:
-                    print(f"  ⚠️  File not found or not a PDF, skipping")
+                    print(f"  ⚠️  File not found: {thesis_path}")
+                    print(f"  ⚠️  Please check the path and try again")
                     self.thesis_path = None
             else:
                 self.thesis_path = None
