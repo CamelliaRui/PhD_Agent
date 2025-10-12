@@ -20,6 +20,8 @@ async def regenerate():
     print("🎯 Loading research interests...")
     planner.load_research_interests("research_interests.md")
     print(f"   Loaded {len(planner.research_interests)} interests")
+    if planner.authors_of_interest:
+        print(f"   Loaded {len(planner.authors_of_interest)} authors of interest: {planner.authors_of_interest}")
 
     # Index talks
     print("🔍 Indexing talks in ChromaDB...")

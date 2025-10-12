@@ -11,3 +11,11 @@
 - novel method developed for single-cell RNA seq
 - large scale single cell RNA seq
 - causal variants, TWAS, GWAS, gene regulatory network
+
+## Authors of Interest
+
+- Steven Gazal
+- Nicholas Mancuso
+- Bogdan Pasaniuc
+- Alkes Price
+- Martin Jingye Zhang

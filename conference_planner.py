@@ -107,6 +107,7 @@ class ConferencePlanner:
         self.talks: List[ConferenceTalk] = []
         self.research_interests: List[str] = []
         self.exclusion_topics: List[str] = []  # Topics to filter out
+        self.authors_of_interest: List[str] = []  # Senior authors to prioritize
         self.thesis_path: Optional[str] = None  # Path to unpublished thesis
         self.thesis_text: Optional[str] = None  # Cached thesis text
 
@@ -352,9 +353,21 @@ class ConferencePlanner:
                 location = line[9:].strip()  # Remove "Location:" prefix
                 continue
 
-            # Look for authors line
+            # Look for authors line (may span multiple lines)
             if line.startswith('Authors:'):
-                authors_line = line[8:].strip()  # Remove "Authors:" prefix
+                author_lines = [line[8:].strip()]  # Remove "Authors:" prefix from first line
+                # Collect continuation lines until we hit another field
+                for j in range(i + 1, len(lines)):
+                    next_line = lines[j].strip()
+                    # Stop at blank lines or next field
+                    if not next_line or next_line.startswith(('Abstract:', 'Location:', 'Subsession')):
+                        break
+                    # If line doesn't start with a field marker, it's a continuation
+                    if not any(next_line.startswith(field) for field in ['Authors:', 'Abstract:', 'Location:']):
+                        author_lines.append(next_line)
+                    else:
+                        break
+                authors_line = ' '.join(author_lines)
                 continue
 
             # Look for abstract
@@ -549,6 +562,7 @@ class ConferencePlanner:
             # Extract sections
             interests = []
             exclusions = []
+            authors_of_interest = []
             thesis_path = None
             current_section = None
 
@@ -561,6 +575,9 @@ class ConferencePlanner:
                     continue
                 elif line_stripped.startswith('## Topics to Exclude'):
                     current_section = 'exclusions'
+                    continue
+                elif line_stripped.startswith('## Authors of Interest'):
+                    current_section = 'authors'
                     continue
                 elif line_stripped.startswith('## Unpublished Work'):
                     current_section = 'thesis'
@@ -577,14 +594,17 @@ class ConferencePlanner:
                             interests.append(item)
                         elif current_section == 'exclusions':
                             exclusions.append(item)
+                        elif current_section == 'authors':
+                            authors_of_interest.append(item.strip())
                         elif current_section == 'thesis' and item.startswith('Path:'):
                             # Extract path from "Path: `path/to/file`"
                             thesis_path = item.replace('Path:', '').strip('` ')
 
             self.research_interests = interests
             self.exclusion_topics = exclusions
+            self.authors_of_interest = authors_of_interest
             self.thesis_path = thesis_path
-            logger.info(f"Loaded {len(interests)} interests, {len(exclusions)} exclusions, thesis: {thesis_path is not None}")
+            logger.info(f"Loaded {len(interests)} interests, {len(exclusions)} exclusions, {len(authors_of_interest)} authors, thesis: {thesis_path is not None}")
             return interests
 
         except FileNotFoundError:
@@ -1065,9 +1085,35 @@ class ConferencePlanner:
                     ]
                 talk = ConferenceTalk(**metadata_copy)
 
+                # Boost score for authors of interest
+                author_boost = 0.0
+                matching_authors = []
+                if self.authors_of_interest and talk.authors:
+                    for author_of_interest in self.authors_of_interest:
+                        # Tokenize author name (split by spaces, periods, commas)
+                        interest_tokens = [t.lower().strip('.,') for t in author_of_interest.split() if len(t.strip('.,')) > 1]
+
+                        for talk_author in talk.authors:
+                            talk_tokens = [t.lower().strip('.,') for t in talk_author.split() if len(t.strip('.,')) > 1]
+
+                            # Match if all non-initial tokens from interest appear in talk author
+                            # (handles middle initials, suffixes, etc.)
+                            if all(token in talk_tokens for token in interest_tokens):
+                                matching_authors.append(talk_author)
+                                author_boost = 0.15  # Significant boost for author match
+                                break
+
+                # Apply boost to similarity
+                boosted_similarity = min(1.0, similarity + author_boost)
+
+                # Store matching authors as metadata (for display later)
+                if matching_authors:
+                    talk._matching_authors = matching_authors  # Store for markdown output
+                    logger.info(f"Author match: {talk.title} - {matching_authors}")
+
                 # Apply exclusion filter
                 if not self.should_exclude_talk(talk):
-                    relevant_talks.append((talk, similarity))
+                    relevant_talks.append((talk, boosted_similarity))
                     if len(relevant_talks) >= top_k:
                         break
                 else:
@@ -1141,6 +1187,13 @@ class ConferencePlanner:
         md += "## 🎯 Your Research Interests\n\n"
         for interest in self.research_interests:
             md += f"- {interest}\n"
+
+        # Authors of interest
+        if self.authors_of_interest:
+            md += "\n## 👤 Authors of Interest\n\n"
+            for author in self.authors_of_interest:
+                md += f"- {author}\n"
+
         md += "\n---\n\n"
 
         # Group by day
@@ -1178,9 +1231,43 @@ class ConferencePlanner:
                 md += f"**Session:** {talk.session_name}\n\n"
 
             if talk.authors:
-                md += f"**👥 Authors:** {', '.join(talk.authors[:3])}"
+                # Highlight matching authors
+                matching_authors = getattr(talk, '_matching_authors', [])
+                displayed_authors = []
+                additional_matches = []  # For matches beyond first 3
+
+                # Helper function for flexible author matching
+                def matches_author_of_interest(author):
+                    if not self.authors_of_interest:
+                        logger.debug(f"No authors of interest loaded")
+                        return False
+                    talk_tokens = [t.lower().strip('.,') for t in author.split() if len(t.strip('.,')) > 1]
+                    for author_of_interest in self.authors_of_interest:
+                        interest_tokens = [t.lower().strip('.,') for t in author_of_interest.split() if len(t.strip('.,')) > 1]
+                        if all(token in talk_tokens for token in interest_tokens):
+                            logger.info(f"✓ Author match: {author} matches {author_of_interest}")
+                            return True
+                    return False
+
+                # Show first 3 authors
+                for author in talk.authors[:3]:
+                    if matches_author_of_interest(author):
+                        displayed_authors.append(f"**⭐ {author}**")  # Highlight with star
+                    else:
+                        displayed_authors.append(author)
+
+                # Check if there are matching authors beyond position 3
                 if len(talk.authors) > 3:
-                    md += f" *et al.* ({len(talk.authors)} total)"
+                    for author in talk.authors[3:]:
+                        if matches_author_of_interest(author):
+                            additional_matches.append(f"**⭐ {author}**")
+
+                md += f"**👥 Authors:** {', '.join(displayed_authors)}"
+                if len(talk.authors) > 3:
+                    if additional_matches:
+                        md += f", ... {', '.join(additional_matches)} *et al.* ({len(talk.authors)} total)"
+                    else:
+                        md += f" *et al.* ({len(talk.authors)} total)"
                 md += "\n\n"
 
             md += f"**📝 Abstract:**\n\n{talk.abstract[:300]}"

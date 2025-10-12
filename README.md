@@ -126,11 +126,13 @@ The Conference Planner uses **RAG (Retrieval-Augmented Generation)** to create p
 #### Features
 - 📄 **PDF Parsing**: Extracts talks/posters from conference abstract PDFs (ASHG 2025 tested with 4000+ pages)
 - 🎯 **Smart Matching**: Semantic similarity matching using ChromaDB and sentence transformers
+- 👤 **Author Tracking** ⭐ NEW: Prioritize talks by specific authors (PIs, collaborators, etc.) with +15% relevance boost
 - 🚫 **Exclusion Filtering**: Filter out wet-lab/clinical work for computational researchers
 - 📖 **Thesis Integration**: Upload your unpublished work for highly precise matching (stored locally only)
 - ⚡ **Smart Caching**: Parses PDF once, caches talks and embeddings (~2 seconds to regenerate)
 - ⚠️ **Conflict Detection**: Identifies overlapping sessions for manual decision-making
 - 📅 **Day-by-Day Schedule**: Markdown output organized by day with relevance scores
+- 📊 **Excel Export**: Convert schedules to Microsoft Excel with filtering and color-coding
 
 #### Quick Start
 
@@ -208,6 +210,31 @@ Enter path to thesis PDF (or drag file here): /path/to/thesis.pdf
   conference/ASHG2025/ashg_schedule.md
 ```
 
+**Example Output with Author Highlighting:**
+
+```markdown
+### Fine-mapping of loci under directional selection reveals functional architecture
+
+**Type:** 📋 Poster | **Relevance Score:** 63.62%  ← Boosted from ~48%!
+
+**⏰ Time:** Friday, October 17 at 1:35pm – 1:40pm
+
+**👥 Authors:** Javier Maravall-López, Ali Akbari, Gaspard Kerner, ... **⭐ Alkes L. Price** *et al.* (6 total)
+
+**📝 Abstract:**
+
+Studies of directional selection inform our understanding of evolution and biology...
+```
+
+Note the **⭐ star** highlighting Alkes L. Price (your author of interest) even though he's the senior author!
+
+**Export to Excel:**
+
+```bash
+python convert_schedule_to_excel.py
+# Creates: conference/ASHG2025/ashg2025_schedule.xlsx
+```
+
 #### Advanced Usage
 
 **Programmatic API:**
@@ -228,6 +255,11 @@ planner.research_interests = [
     "statistical fine-mapping",
     "eQTL analysis",
     "machine learning for genomics"
+]
+planner.authors_of_interest = [
+    "Alkes Price",
+    "Bogdan Pasaniuc",
+    "Nicholas Mancuso"
 ]
 planner.exclusion_topics = [
     "wet-lab protocols",
@@ -260,6 +292,15 @@ planner.generate_schedule_markdown(
 - eQTL, multi-omics, regulatory elements
 - perturb-seq, CRISPR perturbation
 
+## Authors of Interest
+
+*Senior authors, PIs, or collaborators to prioritize:*
+
+- Alkes Price
+- Bogdan Pasaniuc
+- Nicholas Mancuso
+- Jonathan Pritchard
+
 ## Topics to Exclude
 
 *These topics will be filtered out from recommendations:*
@@ -276,14 +317,16 @@ planner.generate_schedule_markdown(
 
 #### How It Works
 
-1. **PDF Parsing**: Custom ASHG parser extracts title, abstract, authors, day, time, location
+1. **PDF Parsing**: Custom ASHG parser extracts title, abstract, authors (all authors including senior), day, time, location
 2. **Caching**: Talks cached as `.ashg2025_talks_cache.pkl`, embeddings in `.chromadb/`
 3. **Embedding**: Uses `sentence-transformers` (all-MiniLM-L6-v2) to encode talks and interests
 4. **Thesis Integration**: If provided, thesis text (first 10k words) is weighted 2x in the query
 5. **RAG Matching**: ChromaDB vector search finds semantically similar talks
-6. **Exclusion Filtering**: Keyword-based filtering removes unwanted topics (wet-lab, pure clinical)
-7. **Conflict Detection**: Groups talks by time slot, identifies overlaps
-8. **Schedule Generation**: Markdown output organized by day with relevance scores
+6. **Author Boosting**: Talks featuring your authors of interest receive +15% relevance boost and are highlighted with ⭐
+7. **Exclusion Filtering**: Keyword-based filtering removes unwanted topics (wet-lab, pure clinical)
+8. **Conflict Detection**: Groups talks by time slot, identifies overlaps
+9. **Schedule Generation**: Markdown output organized by day with relevance scores
+10. **Excel Export**: Optional conversion to Excel with sortable/filterable columns and color-coded conflicts
 
 #### Performance
 
@@ -406,7 +449,7 @@ Developed as part of PhD research to enhance academic productivity through AI au
 **Active Development** - New features and integrations are regularly added based on research needs.
 
 ### Recent Updates
-- ✅ **Oct 11, 2025**: Conference Schedule Planner with RAG, thesis integration, and exclusion filtering
+- ✅ **Oct 11, 2025**: Conference Schedule Planner with RAG, thesis integration, exclusion filtering, and **author-based prioritization**
 - ✅ DeepWiki integration for codebase indexing
 - ✅ MCP integration for enhanced AI capabilities
 - ✅ Slack bot for team collaboration
