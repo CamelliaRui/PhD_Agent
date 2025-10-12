@@ -56,3 +56,6 @@ pip-delete-this-directory.txt
 # OS files
 Thumbs.db
 Desktop.ini
+
+# Developer/Private Notes
+developer_notes.md
