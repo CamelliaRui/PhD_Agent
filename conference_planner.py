@@ -231,76 +231,112 @@ class ConferencePlanner:
     def _parse_ashg_abstracts(self, text: str) -> List[ConferenceTalk]:
         """
         ASHG-specific parser for conference abstracts
-        
-        ASHG format pattern:
-        - Title: Lines before "Subsession Time:" 
-        - Time: "Subsession Time: Day, Month Date at Time"
-        - Authors: "Authors: Name1 (Affiliation1), Name2 (Affiliation2), ..."
-        - Abstract: "Abstract: Content..."
+
+        Uses "Authors:" as the primary marker since both talks and posters have this field.
+        Platform talks have "Subsession Time:", posters have "Session:" or session type info.
         """
         talks = []
-        
-        # Split by looking for title patterns followed by Subsession Time
-        # The title usually appears 1-2 lines before "Subsession Time:"
+
+        # Split by "Authors:" markers to find all abstracts (talks and posters)
         sections = []
-        
-        # Find all "Subsession Time:" positions and extract surrounding context
         lines = text.split('\n')
+
+        authors_found = 0
         for i, line in enumerate(lines):
-            if 'Subsession Time:' in line:
-                # Look backwards for the title (usually 1-2 lines before)
-                # Collect consecutive title lines closest to "Subsession Time:"
+            if line.strip().startswith('Authors:'):
+                authors_found += 1
+                # Look backwards for title (usually 1-5 lines before)
                 title_lines = []
-                for j in range(i-1, max(0, i-4)-1, -1):  # Search backwards from i-1, max 3 lines
+                for j in range(i-1, max(0, i-8)-1, -1):
                     prev_line = lines[j].strip()
 
-                    # Stop at blank lines (separator between abstracts)
+                    # Stop at blank lines
                     if not prev_line:
+                        if title_lines:  # Only stop if we already have title
+                            break
+                        else:
+                            continue  # Skip blank lines before title
+
+                    # Skip metadata fields (but keep looking for title)
+                    if prev_line.startswith(('Location:', 'Subsession Time:', 'Session Time:')):
+                        continue
+
+                    # Stop at section headers
+                    if (prev_line.startswith(('ASHG', 'PgmNr', 'indicates', 'Table of Contents')) or
+                        prev_line.startswith('Session ') and ':' in prev_line):  # "Session 10:" etc
                         break
 
-                    # Check if line looks like a title (not abstract text)
-                    is_title_line = False
+                    # Skip header/footer junk and table of contents entries
+                    if any(word in prev_line.lower() for word in ['table of contents', 'click on', 'page ', ' as of ']):
+                        continue
 
-                    # First line of title (longer, more restrictive)
-                    if not title_lines and len(prev_line) > 20:
-                        if (not prev_line.startswith(('ASHG', 'indicates', 'Session', 'Location:', 'Time:', 'Authors:', 'Abstract:')) and
-                            not (prev_line.endswith('.') or
-                                 any(word in prev_line.lower() for word in [' we ', ' our ', ' this study', ' these ', ' background:', ' methods:', ' results:', ' conclusion:'])) and
-                            not ('(' in prev_line and ')' in prev_line and
-                                 any(inst in prev_line.lower() for inst in ['university', 'institute', 'hospital', 'center']))):
-                            is_title_line = True
-                    # Continuation line (shorter, more permissive - just needs to not look like abstract text)
-                    elif title_lines and len(prev_line) > 5:
-                        if (not prev_line.startswith(('ASHG', 'indicates', 'Session', 'Location:', 'Time:', 'Authors:', 'Abstract:')) and
-                            not prev_line.endswith('.') and  # Titles rarely end with periods on continuation lines
-                            ' ' in prev_line and  # Must have at least one space (multiple words)
-                            not any(word in prev_line.lower() for word in [' we ', ' our ', ' this study', ' these ', ' background:', ' methods:', ' results:', ' conclusion:'])):
-                            is_title_line = True
+                    # Skip table of contents entries (have many dots)
+                    if prev_line.count('.') > 5 or '...' in prev_line:
+                        continue
 
-                    if is_title_line:
-                        title_lines.insert(0, prev_line)  # Insert at beginning to maintain order
-                        # Limit to 2 lines max for multi-line titles
-                        if len(title_lines) >= 2:
-                            break
-                    else:
-                        # Stop at first non-title line
-                        if title_lines:
-                            break
+                    # Skip lines that are mostly punctuation/formatting
+                    alpha_chars = sum(c.isalpha() for c in prev_line)
+                    if len(prev_line) > 0 and alpha_chars / len(prev_line) < 0.5:
+                        continue
 
-                # Join consecutive title lines (handles multi-line titles)
+                    # Likely a title if:
+                    # - Not a metadata field
+                    # - Has reasonable length (> 15 chars)
+                    # - Not obviously abstract text
+                    # - Not truncated mid-sentence
+                    if len(prev_line) > 15:
+                        # Exclude obvious abstract text (contains first-person or methodological language)
+                        is_abstract_text = (
+                            prev_line.endswith('.') and
+                            any(word in prev_line.lower() for word in [' we ', ' our ', ' were ', ' was ', ' this study', 'background:', 'methods:', 'results:', 'conclusion:'])
+                        )
+
+                        # Exclude fragments that start mid-sentence (lowercase first letter)
+                        is_fragment = prev_line[0].islower()
+
+                        if not is_abstract_text and not is_fragment:
+                            title_lines.insert(0, prev_line)
+                            if len(title_lines) >= 2:  # Max 2 lines for title
+                                break
+
+                    # Stop after we have at least one title line
+                    if title_lines and (len(prev_line) < 10 or prev_line.startswith(('Abstract:', 'Authors:'))):
+                        break
+
+                # Build section with extracted title + context
                 title = ' '.join(title_lines) if title_lines else None
-                
-                # Extract the section from this point forward until next subsection or end
-                section_lines = [line]  # Include the Subsession Time line
-                for k in range(i+1, len(lines)):
-                    if 'Subsession Time:' in lines[k]:
-                        break
-                    section_lines.append(lines[k])
-                
+
                 if title:
-                    section_text = '\n'.join([title] + section_lines)
+                    section_lines = [title]  # Start with extracted title
+
+                    # Include metadata (session, time, location) right before Authors
+                    for j in range(max(0, i-5), i):
+                        line_text = lines[j].strip()
+                        if line_text and (line_text.startswith(('Session', 'Location:', 'Subsession Time:')) or
+                                          'Session' in line_text):
+                            section_lines.append(lines[j])
+
+                    # Include from Authors onwards until next Authors: or end
+                    for j in range(i, len(lines)):
+                        next_line = lines[j].strip()
+
+                        # Stop at next abstract
+                        if j > i and next_line.startswith('Authors:'):
+                            break
+
+                        section_lines.append(lines[j])
+
+                        # Stop after we have enough content
+                        if j - i > 100:
+                            break
+
+                    section_text = '\n'.join(section_lines)
                     sections.append(section_text)
-        
+                else:
+                    logger.debug(f"Skipped abstract at line {i} - no valid title found")
+
+        logger.info(f"Found {authors_found} 'Authors:' markers, extracted {len(sections)} potential abstracts")
+
         # Parse each section
         for section in sections:
             try:
@@ -310,8 +346,8 @@ class ConferencePlanner:
             except Exception as e:
                 logger.debug(f"Failed to parse section: {e}")
                 continue
-        
-        logger.info(f"ASHG parser extracted {len(talks)} talks")
+
+        logger.info(f"ASHG parser extracted {len(talks)} talks/posters")
         return talks
     
     def _parse_single_ashg_abstract_v2(self, section: str) -> Optional[ConferenceTalk]:
@@ -333,19 +369,28 @@ class ConferencePlanner:
 
         # Detect session type from the entire section text
         section_lower = section.lower()
-        if any(keyword in section_lower for keyword in ['poster', 'poster session', 'poster presentation']):
+        if any(keyword in section_lower for keyword in ['poster', 'poster session', 'poster presentation', 'pgmnr']):
             session_type = "poster"
-        elif any(keyword in section_lower for keyword in ['platform', 'oral', 'invited', 'plenary']):
+        elif any(keyword in section_lower for keyword in ['platform', 'oral', 'invited', 'plenary', 'subsession time']):
             session_type = "talk"
+        else:
+            # Default to poster if no clear indicator (most abstracts are posters)
+            session_type = "poster"
 
         for i, line in enumerate(lines):
             line = line.strip()
 
-            # Extract timing information
-            if 'Subsession Time:' in line:
+            # Extract timing information (for both talks and posters)
+            if 'Subsession Time:' in line or 'Session:' in line:
                 day_time_match = re.search(r'(\w+, \w+ \d+) at ([\d:apm –-]+)', line)
-                day = day_time_match.group(1) if day_time_match else None
-                time = day_time_match.group(2) if day_time_match else None
+                if day_time_match:
+                    day = day_time_match.group(1)
+                    time = day_time_match.group(2)
+                else:
+                    # Try alternate format: "Session: Day"
+                    day_match = re.search(r'(?:Session|Subsession Time):\s*(.+?)(?:$|at)', line)
+                    if day_match:
+                        day = day_match.group(1).strip()
                 continue
 
             # Extract location
@@ -909,7 +954,7 @@ class ConferencePlanner:
         metadatas = []
         ids = []
 
-        for talk in self.talks:
+        for idx, talk in enumerate(self.talks):
             documents.append(talk.get_searchable_text())
 
             # Convert to dict and make ChromaDB-compatible (no lists, no None)
@@ -925,7 +970,8 @@ class ConferencePlanner:
                     metadata[key] = ''
 
             metadatas.append(metadata)
-            ids.append(talk.presentation_id)
+            # Use index to ensure unique IDs (presentation_id may be duplicate or None)
+            ids.append(f"{self.conference_name.lower()}_{idx}")
 
         # Generate embeddings
         logger.info(f"Generating embeddings for {len(documents)} talks...")
@@ -1231,15 +1277,9 @@ class ConferencePlanner:
                 md += f"**Session:** {talk.session_name}\n\n"
 
             if talk.authors:
-                # Highlight matching authors
-                matching_authors = getattr(talk, '_matching_authors', [])
-                displayed_authors = []
-                additional_matches = []  # For matches beyond first 3
-
                 # Helper function for flexible author matching
                 def matches_author_of_interest(author):
                     if not self.authors_of_interest:
-                        logger.debug(f"No authors of interest loaded")
                         return False
                     talk_tokens = [t.lower().strip('.,') for t in author.split() if len(t.strip('.,')) > 1]
                     for author_of_interest in self.authors_of_interest:
@@ -1249,26 +1289,16 @@ class ConferencePlanner:
                             return True
                     return False
 
-                # Show first 3 authors
-                for author in talk.authors[:3]:
+                # Show ALL authors with highlighting for matches
+                displayed_authors = []
+                for author in talk.authors:
                     if matches_author_of_interest(author):
                         displayed_authors.append(f"**⭐ {author}**")  # Highlight with star
                     else:
                         displayed_authors.append(author)
 
-                # Check if there are matching authors beyond position 3
-                if len(talk.authors) > 3:
-                    for author in talk.authors[3:]:
-                        if matches_author_of_interest(author):
-                            additional_matches.append(f"**⭐ {author}**")
-
-                md += f"**👥 Authors:** {', '.join(displayed_authors)}"
-                if len(talk.authors) > 3:
-                    if additional_matches:
-                        md += f", ... {', '.join(additional_matches)} *et al.* ({len(talk.authors)} total)"
-                    else:
-                        md += f" *et al.* ({len(talk.authors)} total)"
-                md += "\n\n"
+                # Format: show all authors, with count
+                md += f"**👥 Authors ({len(talk.authors)} total):** {', '.join(displayed_authors)}\n\n"
 
             md += f"**📝 Abstract:**\n\n{talk.abstract[:300]}"
             if len(talk.abstract) > 300:

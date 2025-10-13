@@ -73,10 +73,15 @@ def parse_schedule_markdown(md_path):
 
             i += 1  # Skip blank line
 
-            # Authors
-            if i < len(lines) and '**👥 Authors:**' in lines[i]:
-                authors_match = re.search(r'\*\*👥 Authors:\*\* (.+?)$', lines[i])
+            # Authors (handles both old and new format)
+            if i < len(lines) and '**👥 Authors' in lines[i]:
+                # New format: **👥 Authors (N total):** ...
+                # Old format: **👥 Authors:** ...
+                authors_match = re.search(r'\*\*👥 Authors.*?:\*\* (.+?)$', lines[i])
                 authors = authors_match.group(1) if authors_match else "Unknown"
+                # Remove markdown bold/stars from author names
+                authors = re.sub(r'\*\*⭐\s*', '⭐ ', authors)  # Keep star but remove bold
+                authors = re.sub(r'\*\*', '', authors)  # Remove remaining bold markers
                 i += 1
             else:
                 authors = "Unknown"
