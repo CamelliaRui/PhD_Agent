@@ -345,6 +345,8 @@ To add a new conference format, implement a custom parser in `conference_planner
 
 ## 🏗️ Architecture
 
+![PhD Agent Architecture](docs/architecture/diagram.png)
+
 The PhD Agent consists of several modular components:
 
 - **Core Agent** (`phd_agent.py`): Main orchestrator for all research tasks
