@@ -2,6 +2,8 @@
 
 An intelligent AI-powered research assistant designed to streamline PhD research workflows by integrating with multiple platforms and automating common academic tasks.
 
+![PhD Agent Architecture](docs/architecture/diagram.png)
+
 ## 🌟 Key Features
 
 ### 📚 Literature Management
@@ -344,8 +346,6 @@ Currently optimized for:
 To add a new conference format, implement a custom parser in `conference_planner.py`.
 
 ## 🏗️ Architecture
-
-![PhD Agent Architecture](docs/architecture/diagram.png)
 
 The PhD Agent consists of several modular components:
 
