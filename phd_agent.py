@@ -27,6 +27,8 @@ from zotero_mcp_integration import ZoteroMCPIntegration
 from slack_paper_monitor import SlackPaperMonitor
 from deepwiki_mcp_integration import DeepWikiMCPIntegration
 from conference_planner import ConferencePlanner
+from core.react_agent import ReactAgent
+from core.phd_agent_tools import create_phd_agent_tool_registry, get_tool_descriptions
 
 # Load environment variables
 load_dotenv()
@@ -559,8 +561,9 @@ class PhdAgent:
         print("12. 'deepwiki list' - List all indexed repositories")
         print("13. 'interests update' - Update your research interests interactively")
         print("14. 'conference plan [name]' - Plan/regenerate personalized conference schedule")
-        print("15. 'chat [message]' - General discussion")
-        print("16. 'quit' - Exit")
+        print("15. 'react [task]' - ⭐ NEW: Use ReAct agent with observable reasoning")
+        print("16. 'chat [message]' - General discussion")
+        print("17. 'quit' - Exit")
         
         while True:
             try:
@@ -867,6 +870,56 @@ class PhdAgent:
                     else:
                         print(f"❌ Error: {result.get('error', 'Unknown error')}")
 
+                elif user_input.startswith('react '):
+                    task = user_input[6:].strip()
+
+                    if not task:
+                        print("❓ Please provide a task. Example: react Find papers on CRISPR and summarize the top one")
+                        continue
+
+                    print(f"\n🔄 Starting ReAct agent with observable reasoning...")
+                    print(f"📋 Task: {task}\n")
+
+                    try:
+                        # Create tool registry from PhD Agent methods
+                        tools = create_phd_agent_tool_registry(self)
+
+                        # Get API key
+                        api_key = os.getenv("ANTHROPIC_API_KEY")
+                        if not api_key:
+                            print("❌ Error: ANTHROPIC_API_KEY not found in environment")
+                            continue
+
+                        # Initialize ReAct agent
+                        react_agent = ReactAgent(
+                            api_key=api_key,
+                            tools=tools,
+                            max_steps=8,
+                            verbose=True  # Prints reasoning trace as it runs
+                        )
+
+                        # Run the agent
+                        result = react_agent.run(task)
+
+                        # Display summary
+                        print(f"\n{'='*70}")
+                        print(f"✅ Task Status: {result['status']}")
+                        print(f"📊 Steps Taken: {result['steps_taken']}")
+                        print(f"💡 Final Result: {result['final_result']}")
+                        print(f"{'='*70}\n")
+
+                        # Optionally save trace to file
+                        if result['status'] == 'completed':
+                            print("💾 Reasoning trace saved to: react_trace.json")
+                            import json
+                            with open("react_trace.json", "w") as f:
+                                json.dump(result, f, indent=2)
+
+                    except Exception as e:
+                        logger.error(f"Error running ReAct agent: {e}")
+                        print(f"❌ Error: {e}")
+                        print("Try a simpler task or check your API key.")
+
                 elif user_input.startswith('chat '):
                     message = user_input[5:]
                     async with self.client as client:
@@ -876,7 +929,7 @@ class PhdAgent:
                                 for block in response.content:
                                     if hasattr(block, 'text'):
                                         print(f"\n🤖 PhD Agent: {block.text}")
-                
+
                 else:
                     print("❓ Unknown command. Type 'quit' to exit or use one of the available commands.")
             
